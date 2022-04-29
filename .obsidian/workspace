@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/集合类/HashMap & HashSet.md",
+            "file": "Java/集合类/WeakHashMap.md",
             "mode": "source"
           }
         }
@@ -22,7 +22,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/集合类/HashMap & HashSet.md",
+            "file": "Java/集合类/WeakHashMap.md",
             "mode": "preview"
           }
         }
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/集合类/HashMap & HashSet.md",
+                "file": "Java/集合类/WeakHashMap.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +110,7 @@
   },
   "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
+    "Java/集合类/WeakHashMap.md",
     "Java/集合类/HashMap & HashSet.md",
     "Java/集合类/ArrayDeque.md",
     "Java/集合类/PriorityDeque.md",
@@ -118,7 +119,6 @@
     "Java/集合类/TreeMap & TreeSet.md",
     "数据结构/RedBlackTree.md",
     "数据结构/Heap.md",
-    "Java/集合类/LinkedHashMap & LinkedHashSet.md",
-    "Pasted image 20220429181739.png"
+    "Java/集合类/LinkedHashMap & LinkedHashSet.md"
   ]
 }
