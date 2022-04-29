@@ -6,24 +6,12 @@
       {
         "id": "b9746fb0336dcf3f",
         "type": "leaf",
-        "dimension": 48.5838779956427,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/集合类/HashMap & HashSet.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "0f79069e38535b47",
-        "type": "leaf",
-        "dimension": 51.4161220043573,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Java/集合类/HashMap & HashSet.md",
-            "mode": "preview"
+            "file": "数据结构/RedBlackTree.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -81,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/集合类/HashMap & HashSet.md",
+                "file": "数据结构/RedBlackTree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,15 +98,15 @@
   },
   "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
+    "数据结构/RedBlackTree.md",
+    "数据结构/Heap.md",
+    "Java/集合类/ArrayList.md",
     "Java/集合类/HashMap & HashSet.md",
     "Java/集合类/PriorityDeque.md",
-    "数据结构/Heap.md",
     "Java/集合类/ArrayDeque.md",
     "数据结构/Heap/Heap_insert.png",
     "Java/集合类/LinkedList.md",
-    "Java/集合类/ArrayList.md",
     "Java/集合类/PriorityQueue/PriorityQueue_struct.png",
-    "Java/集合类/ArrayDeque/ArrayDeque_compare.png",
-    "Java/集合类/HashSet & HashMap.md"
+    "Java/集合类/ArrayDeque/ArrayDeque_compare.png"
   ]
 }
