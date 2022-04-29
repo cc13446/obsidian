@@ -1,0 +1,124 @@
+{
+  "main": {
+    "id": "65212668621d9be4",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9746fb0336dcf3f",
+        "type": "leaf",
+        "dimension": 48.5838779956427,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Java/集合类/PriorityDeque.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "0f79069e38535b47",
+        "type": "leaf",
+        "dimension": 51.4161220043573,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Java/集合类/PriorityDeque.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "48cc13a56e970c56",
+    "type": "split",
+    "children": [
+      {
+        "id": "2affd474b5fb8e39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cc420eb03298e963",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "877d8120fe5c9296",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "078c1001f74f4c69",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2127b3421ddab18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8514b8e57c8f6757",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Java/集合类/PriorityDeque.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1e24ee3688a20d59",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "b9746fb0336dcf3f",
+  "lastOpenFiles": [
+    "Java/集合类/PriorityDeque.md",
+    "数据结构/Heap.md",
+    "Java/集合类/ArrayDeque.md",
+    "数据结构/Heap/Heap_insert.png",
+    "Java/集合类/LinkedList.md",
+    "Java/集合类/ArrayList.md",
+    "Java/集合类/PriorityQueue/PriorityQueue_struct.png",
+    "Java/集合类/ArrayDeque/ArrayDeque_compare.png",
+    "Java/集合类/HashSet & HashMap.md",
+    "Java/并发.md"
+  ]
+}
