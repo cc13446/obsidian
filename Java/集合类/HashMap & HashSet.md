@@ -404,3 +404,7 @@ class FIFOCache<K, V> extends LinkedHashMap<K, V>{
     }
 }
 ```
+
+# TreeSet & TreeMap
+`TreeMap`底层通过红黑树实现，也就意味着`containsKey()`, `get()`, `put()`, `remove()`都有着`log(n)`的时间复杂度。出于性能原因，`TreeMap`是非同步的，如果需要在多线程环境使用，需要程序员手动同步；或者通过如下方式将`TreeMap`包装成同步的:
+`SortedMap m = Collections.synchronizedSortedMap(new TreeMap());`
