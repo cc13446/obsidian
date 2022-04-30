@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/Synchronized.md",
+            "file": "Java/并发/Volatile.md",
             "mode": "source",
             "source": false
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/Synchronized.md",
+            "file": "Java/并发/Volatile.md",
             "mode": "preview",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/Synchronized.md",
+                "file": "Java/并发/Volatile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,6 +111,7 @@
   },
   "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
+    "Java/并发/Volatile.md",
     "Java/并发/Synchronized.md",
     "Java/并发/Thread.md",
     "Java/并发/理论基础.md",
@@ -119,7 +120,6 @@
     "Java/集合类/HashMap & HashSet.md",
     "Java/集合类/PriorityDeque.md",
     "Java/集合类/ArrayDeque.md",
-    "Java/集合类/LinkedList.md",
-    "数据结构/RedBlackTree.md"
+    "Java/集合类/LinkedList.md"
   ]
 }
