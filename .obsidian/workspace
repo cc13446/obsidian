@@ -6,24 +6,26 @@
       {
         "id": "b9746fb0336dcf3f",
         "type": "leaf",
-        "dimension": 48.5838779956427,
+        "dimension": 48.58387799564271,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/集合类/WeakHashMap.md",
-            "mode": "source"
+            "file": "Java/并发/Synchronized.md",
+            "mode": "source",
+            "source": false
           }
         }
       },
       {
         "id": "0f79069e38535b47",
         "type": "leaf",
-        "dimension": 51.4161220043573,
+        "dimension": 51.41612200435729,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/集合类/WeakHashMap.md",
-            "mode": "preview"
+            "file": "Java/并发/Synchronized.md",
+            "mode": "preview",
+            "source": false
           }
         }
       }
@@ -81,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/集合类/WeakHashMap.md",
+                "file": "Java/并发/Synchronized.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,8 +102,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -110,15 +111,15 @@
   },
   "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
+    "Java/并发/Synchronized.md",
+    "Java/并发/Thread.md",
+    "Java/并发/理论基础.md",
+    "Java/集合类/ArrayList.md",
     "Java/集合类/WeakHashMap.md",
     "Java/集合类/HashMap & HashSet.md",
-    "Java/集合类/ArrayDeque.md",
     "Java/集合类/PriorityDeque.md",
+    "Java/集合类/ArrayDeque.md",
     "Java/集合类/LinkedList.md",
-    "Java/集合类/ArrayList.md",
-    "Java/集合类/TreeMap & TreeSet.md",
-    "数据结构/RedBlackTree.md",
-    "数据结构/Heap.md",
-    "Java/集合类/LinkedHashMap & LinkedHashSet.md"
+    "数据结构/RedBlackTree.md"
   ]
 }
