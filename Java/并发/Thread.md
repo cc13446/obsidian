@@ -12,3 +12,8 @@
 -   实现 Runnable 接口
 -   实现 Callable 接口
 -   继承 Thread 类
+
+# 线程安全的实现方法包
+-   互斥同步: `synchronized` 和 `ReentrantLock`
+-   非阻塞同步: `CAS` ，`AtomicXXXX`
+-   无同步方案: 栈封闭，`Thread Local`，可重入代码
