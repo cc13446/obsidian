@@ -1,4 +1,4 @@
-# 源码分析
+# ReentrantLock源码分析
 ## 类的继承关系
 
 ReentrantLock实现了Lock接口，Lock接口中定义了lock与unlock相关操作，并且还存在newCondition方法，表示生成一个条件。
@@ -168,3 +168,67 @@ static final class FairSync extends Sync {
 ```
 调用过程如下：
 ![[Pasted image 20220430221448.png]]
+
+# ReentrantReadWriteLock
+## 类的继承关系
+
+```java
+public class ReentrantReadWriteLock 
+		implements ReadWriteLock, java.io.Serializable {}
+```
+ReentrantReadWriteLock实现了ReadWriteLock接口，ReadWriteLock接口定义了获取读锁和写锁的规范，具体需要实现类去实现；同时其还实现了Serializable接口，表示可以进行序列化，在源代码中可以看到ReentrantReadWriteLock实现了自己的序列化逻辑。
+
+```java
+public interface ReadWriteLock {    
+	Lock readLock();    
+	Lock writeLock();
+}
+```
+内部类的继承、聚合关系如下图所示
+
+![[Pasted image 20220501005001.png]]
+
+## 内部类
+### Sync类
+Sync类利用AQS单个state字段，来同时表示读状态和写状态，源码如下：
+```java
+abstract static class Sync extends AbstractQueuedSynchronizer {
+
+    private static final long serialVersionUID = 6317671515068378041L;
+    
+    /*
+    * Read vs write count extraction constants and functions.
+    * Lock state is logically divided into two unsigned shorts:
+    * The lower one representing the exclusive (writer) lock hold count,
+    * and the upper the shared (reader) hold count.
+    */
+ 
+    static final int SHARED_SHIFT   = 16;
+    static final int SHARED_UNIT    = (1 << SHARED_SHIFT);
+    static final int MAX_COUNT      = (1 << SHARED_SHIFT) - 1;
+    static final int EXCLUSIVE_MASK = (1 << SHARED_SHIFT) - 1;
+    
+    /** Returns the number of shared holds represented in count  */
+    static int sharedCount(int c)    { return c >>> SHARED_SHIFT; }
+    /** Returns the number of exclusive holds represented in count  */
+    static int exclusiveCount(int c) { return c & EXCLUSIVE_MASK; }
+    
+};
+```
+根据上面源码可以看出：
+- `SHARED_SHIFT`表示AQS中的state的高16位作为读状态，低16位作为写状态
+- `SHARED_UNIT`二级制为2^16，读锁加1，state加SHARED_UNIT
+- `MAX_COUNT`就是写或读资源的最大数量，为2^16-1
+- 使用`sharedCount`方法获取读状态，使用`exclusiveCount`方法获取获取写状态
+
+#### 类的内部类：HoldCounter
+```java
+// 计数器
+static final class HoldCounter {
+    // 计数
+    int count = 0;
+    // Use id, not reference, to avoid garbage retention
+    // 获取当前线程的TID属性的值
+    final long tid = getThreadId(Thread.currentThread());
+}
+```
