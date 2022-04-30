@@ -615,6 +615,11 @@ public final void acquire(int arg) {
     if (!tryAcquire(arg) && acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
         selfInterrupt();
 }
+
+static void selfInterrupt() {
+	// 未获取到同步状态 && 线程中断状态是true，中断当前线程
+	Thread.currentThread().interrupt();
+}
 ```
 调用方法流程如下：
 1. 首先调用`tryAcquire`方法，调用此方法的线程会试图在独占模式下获取对象状态。
@@ -629,6 +634,7 @@ private Node addWaiter(Node mode) {
     Node node = new Node(Thread.currentThread(), mode);
     // 保存尾结点
     Node pred = tail;
+    // 尝试快速添加尾结点
     if (pred != null) { // 尾结点不为空，即已经被初始化
         // 将node结点的prev域连接到尾结点
         node.prev = pred; 
@@ -641,6 +647,7 @@ private Node addWaiter(Node mode) {
     }
     // 尾结点为空(即还没有被初始化过)，或者是compareAndSetTail操作失败，则入队列
     // 队列中没有元素 或者已经被其他线程修改了
+    // 如果上面添加失败，这里循环尝试添加，直到添加成功为止
     enq(node); 
     return node;
 }
@@ -655,7 +662,7 @@ private Node enq(final Node node) {
         } else { 
             // 将node结点的prev域连接到尾结点
             node.prev = t; 
-            // 比较结点t是否为尾结点，若是则将尾结点设置为node
+            // CAS设置尾结点
             if (compareAndSetTail(t, node)) { 
                 // 设置尾结点的next域为node
                 t.next = node; 
@@ -687,14 +694,15 @@ final boolean acquireQueued(final Node node, int arg) {
                 failed = false; // 设置标志
                 return interrupted; 
             }
-            // 说明p为头节点且当前没有获取到锁或者是p不为头结点，
-            // 这个时候就要判断当前node是否要被阻塞防止无限循环浪费资源。
+            // 说明p为头节点且当前没有获取到锁或者是p不为头结点
+            // 这个时候就要判断当前node是否要被阻塞防止无限循环浪费资源
             if (shouldParkAfterFailedAcquire(p, node) 
 	            && parkAndCheckInterrupt())
                 interrupted = true;
         }
     } finally {
         if (failed)
+	        // 取消获取同步状态
             cancelAcquire(node);
     }
 }
@@ -713,6 +721,8 @@ private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
     // 说明头结点处于唤醒状态
     if (ws == Node.SIGNAL)
         // 可以进行park操作
+        // 前置节点的状态是signal，当prev释放了同步状态或者取消了，会通知当前节点
+        // 所以当前节点可以安心的阻塞了（相当睡觉会有人叫醒他）
         return true; 
     // 状态为CANCELLED
     if (ws > 0) { 
@@ -781,11 +791,12 @@ private void cancelAcquire(Node node) {
 		node.next = node; // help GC
 	}
 }
-// 释放后继结点
+// 唤醒后继结点
 private void unparkSuccessor(Node node) {
-	// 获取头结点waitStatus
+	// 获取当前结点waitStatus
 	int ws = node.waitStatus;
 	if (ws < 0)
+		// 如果当前节点状态 < 0，将状态设置成0，当前节点已经没用了
 		compareAndSetWaitStatus(node, ws, 0);
 	// 获取当前节点的下一个节点
 	Node s = node.next;
@@ -800,6 +811,7 @@ private void unparkSuccessor(Node node) {
 	}
 	// 如果当前节点的下个节点不为空，而且状态<=0，就把当前节点unpark
 	if (s != null)
+		// 唤醒后继节点
 		LockSupport.unpark(s.thread);
 }
 ```
@@ -824,3 +836,89 @@ public final boolean release(int arg) {
 }
 ```
 其中，tryRelease的默认实现是抛出异常，需要具体的子类实现，如果tryRelease成功，那么如果头节点不为空并且头节点的状态不为0，则释放头节点的后继结点，unparkSuccessor方法已经分析过，不再累赘。
+
+## 共享式同步状态过程
+共享式与独占式的最主要区别在于同一时刻独占式只能有一个线程获取同步状态，而共享式在同一时刻可以有多个线程获取同步状态。例如读操作可以有多个线程同时进行，而写操作同一时刻只能有一个线程进行写操作，其他操作都会被阻塞。 
+```java
+// 获取同步状态
+public final void acquireShared(int arg) {
+	// 尝试去获取共享锁，获取成功返回true，否则返回false。
+	// 该方法由继承AQS的子类自己实现。采用了模板方法设计模式。
+	if (tryAcquireShared(arg) < 0)
+		// 获取失败，自旋获取同步状态
+		doAcquireShared(arg);
+}
+
+private void doAcquireShared(int arg) {
+	// 添加共享模式节点到队列中
+	final Node node = addWaiter(Node.SHARED);
+	boolean failed = true;
+	try {
+		boolean interrupted = false;
+		// 自旋获取同步状态
+		for (;;) {
+			// 当前节点的前驱
+			final Node p = node.predecessor();
+			// 如果前驱节点是head节点
+			if (p == head) {
+				// 尝试去获取共享同步状态
+				int r = tryAcquireShared(arg);
+				if (r >= 0) {
+					// 将当前节点设置为头结点，并且释放也是共享模式的后继节点
+					setHeadAndPropagate(node, r);
+					p.next = null; // help GC
+					if (interrupted)
+						selfInterrupt();
+					failed = false;
+					return;
+				}
+			}
+			if (shouldParkAfterFailedAcquire(p, node) &&
+				parkAndCheckInterrupt())
+				interrupted = true;
+		}
+	} finally {
+		if (failed)
+			cancelAcquire(node);
+	}
+}
+
+private void setHeadAndPropagate(Node node, int propagate) {
+	Node h = head; // Record old head for check below
+	setHead(node);
+	if (propagate > 0 || h == null || h.waitStatus < 0 
+		|| (h = head) == null || h.waitStatus < 0) {
+		Node s = node.next;
+		if (s == null || s.isShared())
+			// 真正的释放共享同步状态，并唤醒下一个节点
+			doReleaseShared();
+	}
+}
+
+private void doReleaseShared() {
+	// 自旋释放共享同步状态
+	for (;;) {
+		Node h = head;
+		// 如果头结点不为空 && 头结点不等于尾结点，说明存在有效的node节点
+		if (h != null && h != tail) {
+			int ws = h.waitStatus;
+			// 如果头结点的状态为signal，说明存在需要唤醒的后继节点
+			if (ws == Node.SIGNAL) {
+				// 将头结点状态更新为0（初始值状态），因为此时头结点已经没用了                    
+				// continue为了保证替换成功
+				if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
+					continue;
+				// 唤醒后继节点
+				unparkSuccessor(h);
+			}
+			// 如果状态为初始值状态0，那么设置成PROPAGATE状态
+			// 确保在释放同步状态时能通知后继节点
+			else if (ws == 0 &&
+					 !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
+				continue;                // loop on failed CAS
+		}
+		if (h == head)                   // loop if head changed
+			break;
+	}
+}
+```

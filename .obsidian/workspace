@@ -10,9 +10,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ReentrantLock.md",
+            "file": "Java/并发/AQS.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
         }
       },
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ReentrantLock.md",
+            "file": "Java/并发/AQS.md",
             "mode": "preview",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/ReentrantLock.md",
+                "file": "Java/并发/AQS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,8 +111,8 @@
   },
   "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
-    "Java/并发/ReentrantLock.md",
     "Java/并发/AQS.md",
+    "Java/并发/ReentrantLock.md",
     "Java/并发/LockSupport.md",
     "Java/并发/CAS & Unsafe.md",
     "Java/并发/理论基础.md",
