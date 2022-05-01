@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ReentrantLock.md",
+            "file": "Java/并发/Volatile.md",
             "mode": "preview",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/ReentrantLock.md",
+                "file": "Java/并发/Volatile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,15 +111,14 @@
   },
   "active": "0f79069e38535b47",
   "lastOpenFiles": [
-    "Java/并发/ReentrantLock.md",
-    "Java/并发/AQS.md",
-    "Java/并发/LockSupport.md",
-    "Java/并发/CAS & Unsafe.md",
-    "Java/并发/理论基础.md",
     "Java/并发/Volatile.md",
     "Java/并发/Thread.md",
     "Java/并发/Synchronized.md",
-    "Java/集合类/ArrayList.md",
-    "Java/集合类/WeakHashMap.md"
+    "Java/并发/AQS.md",
+    "Java/并发/ReentrantLock.md",
+    "Java/并发/LockSupport.md",
+    "Java/并发/CAS & Unsafe.md",
+    "Java/并发/理论基础.md",
+    "Java/并发/Synchronized.md"
   ]
 }
