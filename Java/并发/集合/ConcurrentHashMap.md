@@ -477,6 +477,15 @@ final V remove(Object key, int hash, Object value) {
 # JDK8
 在JDK1.7之前，`ConcurrentHashMap`是通过分段锁机制来实现的，所以其最大并发度受Segment的个数限制。因此，在JDK1.8中，`ConcurrentHashMap`的实现原理摒弃了这种设计，而是选择了与HashMap类似的数组+链表+红黑树的方式实现，而加锁则采用CAS和`synchronized`实现。
 
+## 为什么 `key` 和 `value` 不允许为 `null`
+在并发编程中，`null` 值容易引来歧义， 假如先调用 `get(key)` 返回的结果是 `null`，那么我们无法确认是因为当时这个 `key` 对应的 `value` 本身放的就是 `null`，还是说这个 `key` 值根本不存在，这会引起歧义，如果在非并发编程中，可以进一步通过调用 `containsKey` 方法来进行判断，但是并发编程中无法保证两个方法之间没有其他线程来修改 `key` 值，所以就直接禁止了 `null` 值的存在。
+
+## sizeCtl 的四个含义
+1.   `sizeCtl<-1` 表示有 `N-1` 个线程正在执行扩容操作，如 `-2` 就表示有 `2-1` 个线程正在扩容。
+2. `sizeCtl=-1` 占位符，表示当前正在初始化数组。
+3. `sizeCtl=0` 默认状态，表示数组还没有被初始化。
+4. `sizeCtl>0` 记录下一次需要扩容的大小。
+
 ## 数据结构
 ![[Pasted image 20220501165451.png]]
 
@@ -600,6 +609,17 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
     return null;
 }
 ```
+### put 操作如何保证数组元素的可见性
+
+`ConcurrentHashMap` 中存储数据采用的 `Node` 数组是采用了 `volatile` 来修饰的，但是这只能保证数组的引用在不同线程之间是可用的，并不能保证数组内部的元素在各个线程之间也是可见的，所以这里我们判定某一个下标是否有元素，并不能直接通过下标来访问，而是通过 `tabAt` 方法来获取元素，而 `tableAt` 方法实际上就是一个 `CAS` 操作：
+```java
+static final <K,V> Node<K,V> tabAt(Node<K,V>[] tab, int i) {
+    return (Node<K,V>)
+	    U.getObjectVolatile(tab, ((long)i << ASHIFT) + ABASE);
+}
+```
+- 如果发现当前节点元素为空，也是通过 `CAS` 操作（`casTabAt`）来初始化当前元素。
+- 如果当前节点元素不为空，则会使用 `synchronized` 关键字锁住当前节点，并进行设值操作
 
 ## 初始化数组: initTable
 初始化一个合适大小的数组，CAS设置 sizeCtl 来解决并发。
@@ -636,7 +656,15 @@ private final Node<K,V>[] initTable() {
 ```
 ## addCount()方法
 若 put 方法元素插入成功之后，则会调用此方法，传入参数为 `addCount(1L, binCount)`。这个方法的目的很简单，就是把整个 table 的元素个数加1。基于减少竞争的目的，这里做了更好的优化。让这些竞争的线程，分散到不同的对象里边，单独操作它自己的数据(计数变量)，用这样的方式尽量降低竞争。到最后需要统计 size 的时候，再把所有对象里边的计数相加就可以了。总数量用 `baseCount` 表示。分散到的对象用 `CounterCell` 表示，对象里边的计数变量用 `value` 表示。注意这里的变量都是 volatile 修饰的。
+```java
+//用来计数的数组，大小为2的N次幂，默认为2
+private transient volatile CounterCell[] counterCells;
 
+@sun.misc.Contended static final class CounterCell {
+        volatile long value;//存储元素个数
+        CounterCell(long x) { value = x; }
+    }
+```
 当需要修改元素数量时，线程会先去 CAS 修改 `baseCount` 加1，若成功即返回。若失败，则线程被分配到某个 `CounterCell` ，然后操作 `value` 加1。若成功，则返回。否则，给当前线程重新分配一个 `CounterCell`，再尝试给 `value` 加1。（这里简略的说，实际更复杂）
 
 `CounterCell` 会组成一个数组，也会涉及到扩容问题。
@@ -644,13 +672,6 @@ private final Node<K,V>[] initTable() {
 ![[Pasted image 20220501173039.png]]
 
 ```java
-//线程被分配到的格子
-@sun.misc.Contended static final class CounterCell {
-	//此格子内记录的 value 值
-    volatile long value;
-    CounterCell(long x) { value = x; }
-}
-
 //用来存储线程和线程生成的随机数的对应关系
 static final int getProbe() {
 	return UNSAFE.getInt(Thread.currentThread(), PROBE);
@@ -707,7 +728,7 @@ private final void addCount(long x, int check) {
 			&& (n = tab.length) < MAXIMUM_CAPACITY) {
 			// 这里假设数组长度n就为16，
 			// 这个方法返回的是一个固定值，用于当做一个扩容的校验标识
-			// 可以跳转到最后，看计算过程，0000 0000 0000 0000 1000 0000 0001 1011
+			// 最后有计算过程，0000 0000 0000 0000 1000 0000 0001 1011
 			int rs = resizeStamp(n);
 			//若sc小于0，说明正在扩容
 			if (sc < 0) {
@@ -719,7 +740,7 @@ private final void addCount(long x, int check) {
 				// 这两个应该是用来判断扩容是否已经完成，但是计算方法存疑
 			    
 			    // nextTable=null 说明需要扩容的新数组还未创建完成
-			    // transferIndex这个参数小于等于0，说明已经不需要其它线程帮助扩容了
+			    // transferIndex这个参数小于等于0，说明已经不需要其它线程帮助扩容
 			    // 但是并不说明已经扩容完成，因为有可能还有线程正在迁移元素
 				if ((sc >>> RESIZE_STAMP_SHIFT) != rs 
 					|| sc == rs + 1 
@@ -727,7 +748,7 @@ private final void addCount(long x, int check) {
 					|| (nt = nextTable) == null 
 					|| transferIndex <= 0)
 				     break;
-				// 到这里说明当前线程可以帮助扩容，因此sc值加一，代表扩容的线程数加1
+				// 到这里说明当前线程可以帮助扩容，因此sc值加一，扩容的线程数加1
 				if (U.compareAndSwapInt(this, SIZECTL, sc, sc + 1))
 				    transfer(tab, nt);
 			}
@@ -780,8 +801,12 @@ static final int resizeStamp(int n) {
 0000 0000 0000 0000 1000 0000 0000 0000
 //它们做或运算，得到 rs 的值
 0000 0000 0000 0000 1000 0000 0001 1011
+// 扩容戳的作用
+// 高 16 位代表当前扩容的标记，可以理解为一个纪元。
+// 低 16 位代表了扩容的线程数。
 ```
 
+首先会判断 `CounterCell` 数组是不是为空，需要这里的是，这里的 `CAS` 操作是将 `BASECOUNT` 和 `baseCount` 进行比较，如果相等，则说明当前没有其他线程过来修改 `baseCount`（即 `CAS` 操作成功），此时则不需要使用 `CounterCell` 数组，而直接采用 `baseCount` 来计数。假如 `CounterCell` 为空且 `CAS` 失败，那么就会通过调用 `fullAddCount` 方法来对 `CounterCell` 数组进行初始化。
 ## fullAddCount()方法
 上边的 addCount 方法还没完，别忘了有可能元素个数加 1 的操作还未成功，就走到 fullAddCount 这个方法了。看方法名，就知道了，全力增加计数值，一定要成功。
 ```java
@@ -889,33 +914,33 @@ private final void fullAddCount(long x, boolean wasUncontended) {
 		// (9)，重新生成一个随机数，进行下一次循环判断
 		h = ThreadLocalRandom.advanceProbe(h);
 	}
-	//2.这里的 cellsBusy 参数是一个volatile的 int值，用来表示自旋锁的标志，
-	//可以类比 AQS 中的 state 参数，用来控制锁之间的竞争，并且是独占模式。
-	//cellsBusy 若为0，说明无锁，线程都可以抢锁，
+	// 2.这里的 cellsBusy 参数是一个volatile的 int值，用来表示自旋锁的标志，
+	// 可以类比 AQS 中的 state 参数，用来控制锁之间的竞争，并且是独占模式。
+	// cellsBusy 若为0，说明无锁，线程都可以抢锁，
 	// 若为1，表示已经有线程拿到了锁，则其它线程不能抢锁。
 	else if (cellsBusy == 0 
 		&& counterCells == as 
 		&& U.compareAndSwapInt(this, CELLSBUSY, 0, 1)) {
 		boolean init = false;
 		try {    
-		//这里再重新检测下 counterCells 数组引用是否有变化
-		if (counterCells == as) {
-			//初始化一个长度为 2 的数组
-			CounterCell[] rs = new CounterCell[2];
-			//根据当前线程的随机数值，计算下标，只有两个结果 0 或 1，并初始化对象
-			rs[h & 1] = new CounterCell(x);
-			//更新数组引用
-			counterCells = rs;
-			//初始化成功的标志
-			init = true;
+			//这里再重新检测下 counterCells 数组引用是否有变化
+			if (counterCells == as) {
+				//初始化一个长度为 2 的数组
+				CounterCell[] rs = new CounterCell[2];
+				//根据当前线程的随机数值，计算下标，只有两个结果0或1，并初始化对象
+				rs[h & 1] = new CounterCell(x);
+				//更新数组引用
+				counterCells = rs;
+				//初始化成功的标志
+				init = true;
+			}
+		} finally {
+			//别忘了，需要手动解锁。
+			cellsBusy = 0;
 		}
-	} finally {
-		//别忘了，需要手动解锁。
-		cellsBusy = 0;
-	}
-	//若初始化成功，则说明当前加1的操作也已经完成了，则退出整个循环。
-	if (init)
-		break;
+		//若初始化成功，则说明当前加1的操作也已经完成了，则退出整个循环。
+		if (init)
+			break;
 	}
 	//3.到这，说明数组为空，且 2 抢锁失败，则尝试直接去修改 baseCount 的值，
 	//若成功，也说明加1操作成功，则退出循环。
