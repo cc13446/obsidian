@@ -4,28 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "b9746fb0336dcf3f",
+        "id": "0f79069e38535b47",
         "type": "leaf",
-        "dimension": 49.277184160905094,
+        "dimension": 49.27718416090509,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/CopyOnWriteArrayList.md",
+            "file": "Java/并发/ConcurrentLinkedQueue.md",
             "mode": "source",
             "source": true
           }
         }
       },
       {
-        "id": "0f79069e38535b47",
+        "id": "b9746fb0336dcf3f",
         "type": "leaf",
-        "dimension": 50.722815839094906,
+        "dimension": 50.72281583909491,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/CopyOnWriteArrayList.md",
+            "file": "Java/并发/ConcurrentLinkedQueue.md",
             "mode": "preview",
-            "source": false
+            "source": true
           }
         }
       }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/CopyOnWriteArrayList.md",
+                "file": "Java/并发/ConcurrentLinkedQueue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,8 +109,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "b9746fb0336dcf3f",
+  "active": "0f79069e38535b47",
   "lastOpenFiles": [
+    "Java/并发/ConcurrentLinkedQueue.md",
     "Java/并发/CopyOnWriteArrayList.md",
     "Java/并发/ConcurrentHashMap.md",
     "Java/并发/ConcurrentHashMap-NSConflict-cc13446-mac12.3.1.md",
@@ -119,7 +120,6 @@
     "Java/并发/Volatile.md",
     "Java/并发/Thread.md",
     "Java/并发/Synchronized.md",
-    "Java/并发/AQS.md",
-    "Java/并发/LockSupport.md"
+    "Java/并发/AQS.md"
   ]
 }
