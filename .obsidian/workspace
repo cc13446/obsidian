@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ConcurrentHashMap.md",
+            "file": "Java/并发/BlockQueue.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ConcurrentLinkedQueue.md",
+            "file": "Java/并发/BlockQueue.md",
             "mode": "preview",
             "source": true
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/ConcurrentHashMap.md",
+                "file": "Java/并发/BlockQueue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,17 +109,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0f79069e38535b47",
+  "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
-    "Java/并发/ConcurrentHashMap.md",
+    "Java/并发/BlockQueue.md",
     "Java/并发/ConcurrentLinkedQueue.md",
     "Java/并发/CopyOnWriteArrayList.md",
+    "Java/并发/ConcurrentHashMap.md",
     "Java/并发/ConcurrentHashMap-NSConflict-cc13446-mac12.3.1.md",
     "Java/集合类/HashMap & HashSet.md",
     "Java/并发/ReentrantLock.md",
     "Java/并发/Volatile.md",
     "Java/并发/Thread.md",
-    "Java/并发/Synchronized.md",
-    "Java/并发/AQS.md"
+    "Java/并发/Synchronized.md"
   ]
 }
