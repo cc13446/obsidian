@@ -6,24 +6,24 @@
       {
         "id": "b9746fb0336dcf3f",
         "type": "leaf",
-        "dimension": 48.58387799564271,
+        "dimension": 49.277184160905094,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/ReentrantLock.md",
+            "file": "Java/并发/ConcurrentHashMap.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
         }
       },
       {
         "id": "0f79069e38535b47",
         "type": "leaf",
-        "dimension": 51.41612200435729,
+        "dimension": 50.722815839094906,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/Volatile.md",
+            "file": "Java/并发/ConcurrentHashMap.md",
             "mode": "preview",
             "source": false
           }
@@ -67,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327
+    "width": 292
   },
   "right": {
     "id": "078c1001f74f4c69",
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/Volatile.md",
+                "file": "Java/并发/ConcurrentHashMap.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,16 +109,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0f79069e38535b47",
+  "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
+    "Java/并发/ConcurrentHashMap.md",
+    "Java/并发/ConcurrentHashMap-NSConflict-cc13446-mac12.3.1.md",
+    "Java/集合类/HashMap & HashSet.md",
+    "Java/并发/ReentrantLock.md",
     "Java/并发/Volatile.md",
     "Java/并发/Thread.md",
     "Java/并发/Synchronized.md",
     "Java/并发/AQS.md",
-    "Java/并发/ReentrantLock.md",
     "Java/并发/LockSupport.md",
-    "Java/并发/CAS & Unsafe.md",
-    "Java/并发/理论基础.md",
-    "Java/并发/Synchronized.md"
+    "Java/并发/CAS & Unsafe.md"
   ]
 }
