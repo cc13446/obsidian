@@ -1283,7 +1283,7 @@ final Node<K,V>[] helpTransfer(Node<K,V>[] tab, Node<K,V> f) {
 }
 ```
 
-## [¶](#对比总结) 对比总结
+## 对比总结
 -   `HashTable` : 使用了synchronized关键字对put等操作进行加锁;
 -   `ConcurrentHashMap JDK1.7`: 使用分段锁机制实现;
 -   `ConcurrentHashMap JDK1.8`: 则使用数组+链表+红黑树数据结构和CAS原子操作实现;
