@@ -37,7 +37,7 @@
 -   `limit`: 还可以读写的字节数。
 
 
-## 文件 NIO 实例
+# 文件 NIO 实例
 
 以下展示了使用 NIO 快速复制文件的实例:
 
@@ -82,7 +82,7 @@ public static void fastCopy(String src, String dist) throws IOException {
 ```
   
 
-## 选择器
+# 选择器
 
 NIO 常常被叫做非阻塞 IO，主要是因为 NIO 在网络通信中的非阻塞特性被广泛使用。
 
@@ -92,12 +92,12 @@ NIO 实现了 IO 多路复用中的 `Reactor` 模型，一个线程 `Thread` 使
 
 因为创建和切换线程的开销很大，因此使用一个线程来处理多个事件而不是一个线程处理一个事件具有更好的性能。
 
-### 1. 创建选择器
+## 1. 创建选择器
 ```java
 Selector selector = Selector.open();
 ```
 
-### 2. 将通道注册到选择器上
+## 2. 将通道注册到选择器上
 ```java
 ServerSocketChannel ssChannel = ServerSocketChannel.open();
 ssChannel.configureBlocking(false);
@@ -127,7 +127,7 @@ public static final int OP_ACCEPT = 1 << 4;
 int interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE;
 ```
 
-### 3. 监听事件
+## 3. 监听事件
 
 ```java
 int num = selector.select();
@@ -135,7 +135,7 @@ int num = selector.select();
 
 使用 select() 来监听到达的事件，它会一直阻塞直到有至少一个事件到达。
 
-### 4. 获取到达的事件
+## 4. 获取到达的事件
 
 ```java
 Set<SelectionKey> keys = selector.selectedKeys();
@@ -151,7 +151,7 @@ while (keyIterator.hasNext()) {
 }
 ```
 
-### 5. 事件循环
+## 5. 事件循环
 
 因为一次 `select()` 调用不能处理完所有的事件，并且服务器端有可能需要一直监听事件，因此服务器端处理事件的代码一般会放在一个死循环内。
 
@@ -172,7 +172,7 @@ while (true) {
 }
 ```
 
-## 套接字 NIO 实例
+# 套接字 NIO 实例
 
 ```java
 public class NIOServer {
@@ -264,8 +264,17 @@ public class NIOClient {
     }
 }
 ```
-## 内存映射文件
 
+
+# NIO 零拷贝实现
+`Java NIO` 中的通道(Channel)就相当于操作系统的内核空间(kernel space)的缓冲区，而缓冲区(Buffer)对应的相当于操作系统的用户空间(user space)中的用户缓冲区(user buffer)。
+-   `Channel`是全双工的，它既可能是读缓冲区，也可能是网络缓冲区。
+-   `Buffer`分为堆内存和堆外内存，这是通过 `malloc()` 分配出来的用户态内存。
+ 
+堆外内存`DirectBuffer`在使用后需要应用程序手动回收，而堆内存`HeapBuffer`的数据在 GC 时可能会被自动回收。因此，在使用 `HeapBuffer` 读写数据时，为了避免缓冲区数据因为 GC 而丢失，`NIO` 会先把 `HeapBuffer` 内部的数据拷贝到一个临时的 `DirectBuffer` 中的本地内存`native memory`，这个拷贝涉及到 `sun.misc.Unsafe.copyMemory()` 的调用，背后的实现原理与 `memcpy()` 类似。 最后，将临时生成的 `DirectBuffer` 内部的数据的内存地址传给 I/O 调用函数，这样就避免了再去访问 Java 对象处理 I/O 读写。
+
+### [¶](#mappedbytebuffer)
+## 内存映射文件
 内存映射文件 I/O 是一种读和写文件数据的方法，它可以比常规的基于流或者基于通道的 I/O 快得多。
 
 向内存映射文件写入可能是危险的，只是改变数组的单个元素这样的简单操作，就可能会直接修改磁盘上的文件。修改数据与将数据保存到磁盘是没有分开的。
