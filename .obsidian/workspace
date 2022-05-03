@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/工具类/Exchanger.md",
+            "file": "Java/并发/工具类/ThreadLocal.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/并发/工具类/Exchanger.md",
+            "file": "Java/并发/工具类/ThreadLocal.md",
             "mode": "preview",
             "source": false
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/并发/工具类/Exchanger.md",
+                "file": "Java/并发/工具类/ThreadLocal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,6 +111,7 @@
   },
   "active": "0f79069e38535b47",
   "lastOpenFiles": [
+    "Java/并发/工具类/ThreadLocal.md",
     "Java/并发/工具类/Exchanger.md",
     "Java/并发/工具类/Phaser.md",
     "Java/并发/工具类/Semaphore.md",
@@ -119,7 +120,6 @@
     "Java/集合类/ArrayDeque.md",
     "Java/集合类/ArrayDeque/ArrayDeque_compare.png",
     "Java/并发/线程池/Fork&Join.md",
-    "Java/并发/线程池/ThreadPoolExecutor.md",
-    "Java/并发/集合/BlockQueue.md"
+    "Java/并发/线程池/ThreadPoolExecutor.md"
   ]
 }
