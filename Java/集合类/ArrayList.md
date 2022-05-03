@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # 概述
 `ArrayList`实现了`List`接口，是顺序容器，即元素存放的数据与放进去的顺序相同，允许放入`null`元素。每个`ArrayList`都有一个`capacity`，表示底层数组的实际大小。
 

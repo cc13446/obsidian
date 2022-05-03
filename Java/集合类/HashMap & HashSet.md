@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # HashSet
 `HashSet`和`HashMap`在Java中有相同的实现，前者仅仅是对后者做了一层包装，也就是说`HashSet`里面有一个`HashMap`(适配器模式)。
 ```java

@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # 概述
 `ArrayDeque`和`LinkedList`是`Deque`的两个通用实现，由于官方更推荐使用`ArrayDeque`用作栈和队列。
 

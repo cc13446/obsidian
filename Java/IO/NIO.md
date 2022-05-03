@@ -1,3 +1,5 @@
+转载自`https://pdai.tech/`
+转载自`https://zhuanlan.zhihu.com/p/78869158`
 # 流与块
 - 面向流的 I/O 一次处理一个字节数据
 - 面向块的 I/O 一次处理一个数据块
@@ -273,14 +275,136 @@ public class NIOClient {
  
 堆外内存`DirectBuffer`在使用后需要应用程序手动回收，而堆内存`HeapBuffer`的数据在 GC 时可能会被自动回收。因此，在使用 `HeapBuffer` 读写数据时，为了避免缓冲区数据因为 GC 而丢失，`NIO` 会先把 `HeapBuffer` 内部的数据拷贝到一个临时的 `DirectBuffer` 中的本地内存`native memory`，这个拷贝涉及到 `sun.misc.Unsafe.copyMemory()` 的调用，背后的实现原理与 `memcpy()` 类似。 最后，将临时生成的 `DirectBuffer` 内部的数据的内存地址传给 I/O 调用函数，这样就避免了再去访问 Java 对象处理 I/O 读写。
 
-### [¶](#mappedbytebuffer)
 ## 内存映射文件
-内存映射文件 I/O 是一种读和写文件数据的方法，它可以比常规的基于流或者基于通道的 I/O 快得多。
+### MappedByteBuffer
+`MappedByteBuffer` 是 NIO 基于内存映射方式的提供的一种实现，继承自 `ByteBuffer`。`FileChannel` 定义了一个 `map()` 方法，它可以把一个文件从 `position` 位置开始的 `size` 大小的区域映射为内存映像文件。
 
-向内存映射文件写入可能是危险的，只是改变数组的单个元素这样的简单操作，就可能会直接修改磁盘上的文件。修改数据与将数据保存到磁盘是没有分开的。
+`FileChannel.map()`方法其实就是采用了操作系统中的内存映射方式，底层就是调用`Linux mmap()`实现的。
 
-下面代码行将文件的前 1024 个字节映射到内存中，`map()` 方法返回一个 `MappedByteBuffer`，它是 `ByteBuffer` 的子类。因此，可以像使用其他任何 `ByteBuffer` 一样使用新映射的缓冲区，操作系统会在需要时负责执行映射。
+抽象方法 `map()` 方法在 `FileChannel` 中的定义如下：
+```java
+public abstract MappedByteBuffer map(MapMode mode, long position, 
+	long size) throws IOException;
+```
+-   `mode`：限定内存映射区域对内存映像文件的访问模式
+	- 只可读`READ_ONLY`
+	- 可读可写`READ_WRITE`
+	- 写时拷贝`PRIVATE`
+-   `position`：文件映射的起始地址，对应内存映射区域的首地址。
+-   `size`：文件映射的字节长度，从 `position` 往后的字节数，对应内存映射区域的大小
+
+`MappedByteBuffer` 相比 `ByteBuffer` 新增了三个重要的方法：
+
+-   `fore()`：对于处于 `READ_WRITE` 模式下的缓冲区，把对缓冲区内容的修改强制刷新到本地文件
+-   `load()`：将缓冲区的内容载入物理内存中，并返回这个缓冲区的引用。
+-   `isLoaded()`：如果缓冲区的内容在物理内存中，则返回 true，否则返回 false。
+
+#### 使用示例：
 
 ```java
-MappedByteBuffer mbb = fc.map(FileChannel.MapMode.READ_WRITE, 0, 1024);
+private final static String CONTENT = "Zero copy implemented by MappedByteBuffer";
+private final static String FILE_NAME = "/mmap.txt";
+private final static String CHARSET = "UTF-8";
 ```
+##### 写文件数据
+打开文件通道 `fileChannel` 并提供读权限、写权限和数据清空权限，通过 `fileChannel` 映射到一个可写的内存缓冲区 `mappedByteBuffer`，将目标数据写入 `mappedByteBuffer`，通过 `force()` 方法把缓冲区更改的内容强制写入本地文件。
+
+```java
+@Test
+public void writeToFileByMappedByteBuffer() {
+    Path path = Paths.get(getClass().getResource(FILE_NAME).getPath());
+    byte[] bytes = CONTENT.getBytes(Charset.forName(CHARSET));
+    // 打开文件通道
+    try (FileChannel fileChannel 
+		    = FileChannel.open(path, StandardOpenOption.READ,
+	        StandardOpenOption.WRITE, 
+	        StandardOpenOption.TRUNCATE_EXISTING)) {
+		// 映射到一个可写的内存缓冲区
+        MappedByteBuffer mappedByteBuffer 
+	        = fileChannel.map(READ_WRITE, 0, bytes.length);
+        if (mappedByteBuffer != null) {
+            mappedByteBuffer.put(bytes);
+            // 把缓冲区更改的内容强制写入本地文件
+            mappedByteBuffer.force();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+##### 读文件数据
+打开文件通道 `fileChannel` 并提供只读权限，通过 `fileChannel` 映射到一个只可读的内存缓冲区 `mappedByteBuffer`，读取 `mappedByteBuffer` 中的字节数组即可得到文件数据。
+
+```java
+@Test
+public void readFromFileByMappedByteBuffer() {
+    Path path = Paths.get(getClass().getResource(FILE_NAME).getPath());
+    int length = CONTENT.getBytes(Charset.forName(CHARSET)).length;
+    try (FileChannel fileChannel 
+	    = FileChannel.open(path, StandardOpenOption.READ)) {
+        MappedByteBuffer mappedByteBuffer 
+	        = fileChannel.map(READ_ONLY, 0, length);
+        if (mappedByteBuffer != null) {
+            byte[] bytes = new byte[length];
+            mappedByteBuffer.get(bytes);
+            String content = new String(bytes, StandardCharsets.UTF_8);
+            assertEquals(content, "Zero copy implemented by MappedByteBuffer");
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+#### 特点和不足
+1. `MappedByteBuffer` 使用是堆外的虚拟内存，因此分配的内存大小不受 JVM 的 -Xmx 参数限制，但是也是有大小限制的。 如果当文件超出 `Integer.MAX_VALUE` 字节限制时，可以通过 `position` 参数重新 `map` 文件后面的内容。
+2. `MappedByteBuffer` 在处理大文件时性能的确很高，但也存内存占用、文件关闭不确定等问题，被其打开的文件只有在垃圾回收的才会被关闭，而且这个时间点是不确定的。
+3. `MappedByteBuffer` 提供了文件映射内存的 `mmap()` 方法，也提供了释放映射内存的 `unmap()` 方法。然而 `unmap()` 是 `FileChannelImpl` 中的私有方法，无法直接显示调用。因此，用户程序需要通过 Java 反射的调用 `sun.misc.Cleaner` 类的 clean() 方法手动释放映射占用的内存区域。
+
+### FileChannel
+
+ `transferTo()`：通过 `FileChannel` 把文件的源数据写入一个 `WritableByteChannel` 的目的通道。
+
+```java
+public abstract long transferTo(long position, long count, 
+								WritableByteChannel target)
+							    throws IOException;
+```
+
+`transferFrom()`：把一个源通道 `ReadableByteChannel` 中的数据读取到当前 `FileChannel` 的文件
+
+```java
+public abstract long transferFrom(ReadableByteChannel src, 
+								  long position, long count)
+							      throws IOException;
+```
+
+`FileChannel.transferTo()`方法直接将当前通道内容传输到另一个通道，没有涉及到`Buffer`的任何操作，`transferTo()`的实现方式就是通过系统调用`sendfile()` (当然这是Linux中的系统调用)
+
+
+
+```java
+//使用sendfile:读取磁盘文件，并网络发送
+FileChannel sourceChannel 
+	= new RandomAccessFile(source, "rw").getChannel();
+SocketChannel socketChannel = SocketChannel.open(sa);
+sourceChannel.transferTo(0, sourceChannel.size(), socketChannel);
+```
+
+`ZeroCopyFile`实现文件复制
+```java
+class ZeroCopyFile {
+
+    public void copyFile(File src, File dest) {
+        try (FileChannel srcChannel 
+		        = new FileInputStream(src).getChannel();
+			FileChannel destChannel 
+	             = new FileInputStream(dest).getChannel()) {
+            srcChannel.transferTo(0, srcChannel.size(), destChannel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+`Java NIO`提供的`FileChannel.transferTo` 和 `transferFrom` 并不保证一定能使用零拷贝。实际上是否能使用零拷贝与操作系统相关，如果操作系统提供 `sendfile` 这样的零拷贝系统调用，则这两个方法会通过这样的系统调用充分利用零拷贝的优势，否则并不能通过这两个方法本身实现零拷贝。

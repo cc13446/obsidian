@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # 概述
 `AbstractQueuedSynchronizer`是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的`ReentrantLock`，`Semaphore`，`其他的诸如ReentrantReadWriteLock`，`SynchronousQueue`，`FutureTask`等等皆是基于AQS的。
 

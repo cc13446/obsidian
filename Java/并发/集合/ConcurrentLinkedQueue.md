@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # ConcurrentLinkedQueue数据结构
 
 `ConcurrentLinkedQueue`的数据结构与`LinkedBlockingQueue`的数据结构相同，都是使用的链表结构，并且包含有一个头节点和一个尾结点。

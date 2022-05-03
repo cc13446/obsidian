@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 #  概论
 `WeakHashMap`里的`entry`可能会被GC自动删除，即使程序员没有调用`remove()`或者`clear()`方法。
 

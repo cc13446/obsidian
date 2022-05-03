@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # JDK7
 ## 概述
 `ConcurrentHashMap`在对象中保存了一个`Segment`数组，即将整个`Hash`表划分为多个分段；而每个`Segment`元素，即每个分段则类似于一个`Hashtable`；这样，在执行put操作时首先根据hash算法定位到元素属于哪个`Segment`，然后对该`Segment`加锁即可。因此，`ConcurrentHashMap`在多线程并发编程中可是实现多线程put操作。

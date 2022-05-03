@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # 简介
 `Phaser`是JDK1.7开始引入的一个同步工具类，适用于一些需要分阶段的任务的处理。它的功能与 `CyclicBarrier` 和`CountDownLatch`有些类似，类似于一个多阶段的栅栏，并且功能更强大，我们来比较下这三者的功能：
 

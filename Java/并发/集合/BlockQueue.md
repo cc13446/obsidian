@@ -1,3 +1,4 @@
+转载自`https://pdai.tech/`
 # BlockingQueue家族(常用系列)
 ## ArrayBlockingQueue
 ## LinkedBlockingQueue

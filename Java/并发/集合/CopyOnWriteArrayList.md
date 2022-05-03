@@ -1,5 +1,4 @@
-
-
+转载自`https://pdai.tech/`
 # 类的继承关系
 
 `CopyOnWriteArrayList`实现了List接口，List接口定义了对列表的基本操作；同时实现了RandomAccess接口，表示可以随机访问(数组具有随机访问的特性)；同时实现了`Cloneable`接口，表示可克隆；同时也实现了`Serializable`接口，表示可被序列化。
