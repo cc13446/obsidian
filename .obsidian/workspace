@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Linux/NIO.md",
+            "file": "Java/JVM/JVM内存结构.md",
             "mode": "source",
             "source": true
           }
@@ -23,9 +23,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Linux/NIO.md",
+            "file": "Java/JVM/JVM内存结构.md",
             "mode": "preview",
-            "source": false
+            "source": true
           }
         }
       }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/NIO.md",
+                "file": "Java/JVM/JVM内存结构.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,17 +109,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0f79069e38535b47",
+  "active": "b9746fb0336dcf3f",
   "lastOpenFiles": [
-    "Linux/NIO.md",
-    "Linux/NIO/346e30f4-9119-11eb-bb4a-4a238cf0c417.mp4",
-    "Linux/零拷贝技术.md",
-    "Linux/NIO/349279b4-9119-11eb-85d0-1278b449b310.mp4",
-    "Java/IO/NIO.md",
-    "Java/并发/工具类/CountDownLatch.md",
-    "Java/IO/IO模型.md",
+    "Java/JVM/JVM内存结构.md",
+    "Java/JVM/类加载机制.md",
+    "Java/JVM/类字节码.md",
+    "Java/新特性/Java8/Stream.md",
+    "Java/新特性/Java8/lambda.md",
     "Java/IO/IO概述.md",
-    "Java/集合类/PriorityDeque.md",
-    "Java/集合类/WeakHashMap.md"
+    "Java/集合类/ArrayDeque.md",
+    "Java/新特性/Java8+/Pasted image 20220504154335.png",
+    "Linux/NIO.md",
+    "Linux/NIO/346e30f4-9119-11eb-bb4a-4a238cf0c417.mp4"
   ]
 }
