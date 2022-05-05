@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/JVM/JVM内存结构.md",
+            "file": "Java/JVM/垃圾回收.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/JVM/JVM内存结构.md",
+            "file": "Java/JVM/垃圾回收.md",
             "mode": "preview",
             "source": true
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/JVM/JVM内存结构.md",
+                "file": "Java/JVM/垃圾回收.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,6 +111,7 @@
   },
   "active": "0f79069e38535b47",
   "lastOpenFiles": [
+    "Java/JVM/垃圾回收.md",
     "Java/JVM/JVM内存结构.md",
     "Java/JVM/类加载机制.md",
     "Java/JVM/类字节码.md",
@@ -119,7 +120,6 @@
     "Java/IO/IO概述.md",
     "Java/集合类/ArrayDeque.md",
     "Java/新特性/Java8+/Pasted image 20220504154335.png",
-    "Linux/NIO.md",
-    "Linux/NIO/346e30f4-9119-11eb-bb4a-4a238cf0c417.mp4"
+    "Linux/NIO.md"
   ]
 }
