@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Redis/持久化.md",
+            "file": "Redis/缓存雪崩&击穿&穿透.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Redis/持久化.md",
+            "file": "Redis/缓存雪崩&击穿&穿透.md",
             "mode": "preview",
             "source": true
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Redis/持久化.md",
+                "file": "Redis/缓存雪崩&击穿&穿透.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,9 +111,9 @@
   },
   "active": "0f79069e38535b47",
   "lastOpenFiles": [
+    "Redis/缓存雪崩&击穿&穿透.md",
     "Redis/持久化.md",
     "Redis/数据类型.md",
-    "Redis/Untitled.md",
     "Redis/数据类型/Pasted image 20220505185952.png",
     "Redis/数据类型/Pasted image 20220505183701.png",
     "Redis/数据类型/Pasted image 20220505181355.png",
