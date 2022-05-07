@@ -4,28 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "0f79069e38535b47",
+        "id": "8656b2c3bf815671",
         "type": "leaf",
-        "dimension": 50.85470085470085,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring/IOC.md",
+            "file": "深入理解JVM虚拟机/2.Java内存区域.md",
             "mode": "source",
-            "source": true
-          }
-        }
-      },
-      {
-        "id": "b9746fb0336dcf3f",
-        "type": "leaf",
-        "dimension": 49.14529914529914,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Spring/IOC.md",
-            "mode": "preview",
-            "source": true
+            "source": false
           }
         }
       }
@@ -67,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244
+    "width": 210
   },
   "right": {
     "id": "078c1001f74f4c69",
@@ -83,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring/IOC.md",
+                "file": "深入理解JVM虚拟机/2.Java内存区域.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,24 +88,25 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "0f79069e38535b47",
+  "active": "8656b2c3bf815671",
   "lastOpenFiles": [
-    "Spring/IOC.md",
-    "Redis/哨兵机制.md",
-    "Redis/主从复制.md",
-    "Redis/缓存雪崩&击穿&穿透.md",
-    "Redis/持久化.md",
-    "Redis/数据类型.md",
-    "Redis/数据类型/Pasted image 20220505185952.png",
-    "Redis/数据类型/Pasted image 20220505183701.png",
-    "Redis/数据类型/Pasted image 20220505181355.png",
-    "Redis/数据类型/Pasted image 20220505151144.png"
+    "深入理解JVM虚拟机/2.Java内存区域.md",
+    "Java/并发/关键字/Synchronized/Pasted image 20220430111457.png",
+    "Java/并发/关键字/Synchronized.md",
+    "Java/JVM/垃圾回收.md",
+    "Java/JVM/类加载机制.md",
+    "Java/JVM/类字节码.md",
+    "Java/JVM/JVM内存结构.md",
+    "深入理解JVM虚拟机/8.虚拟机字节码执行引擎.md",
+    "Java/并发/关键字/Volatile.md",
+    "数据结构/RedBlackTree.md"
   ]
 }
