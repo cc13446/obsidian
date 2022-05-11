@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "深入理解JVM虚拟机/10.前端编译与优化.md",
-            "mode": "source",
-            "source": false
+            "file": "深入理解JVM虚拟机/11.后端编译与优化.md",
+            "mode": "preview",
+            "source": true
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "深入理解JVM虚拟机/10.前端编译与优化.md",
+                "file": "深入理解JVM虚拟机/11.后端编译与优化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,8 +87,17 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "042f8faf5f3fc7f0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -97,15 +106,15 @@
   },
   "active": "8656b2c3bf815671",
   "lastOpenFiles": [
-    "深入理解JVM虚拟机/10.前端编译与优化.md",
+    "深入理解JVM虚拟机/11.后端编译与优化.md",
     "深入理解JVM虚拟机/8.字节码执行引擎.md",
+    "深入理解JVM虚拟机/10.前端编译与优化.md",
+    "深入理解JVM虚拟机/3.垃圾收集器.md",
+    "深入理解JVM虚拟机/7.类加载机制.md",
     "Java/JVM/JVM内存结构.md",
     "Java/JVM/类字节码.md",
     "Java/JVM/类加载机制.md",
     "Java/JVM/垃圾回收.md",
-    "深入理解JVM虚拟机/3.垃圾收集器.md",
-    "深入理解JVM虚拟机/6.类文件结构.md",
-    "深入理解JVM虚拟机/7.类加载机制.md",
-    "深入理解JVM虚拟机/2.Java内存区域.md"
+    "深入理解JVM虚拟机/6.类文件结构.md"
   ]
 }
