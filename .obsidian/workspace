@@ -7,8 +7,12 @@
         "id": "8656b2c3bf815671",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "深入理解JVM虚拟机/8.字节码执行引擎.md",
+            "mode": "preview",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "深入理解JVM虚拟机/8.字节码执行引擎.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,15 +106,15 @@
   },
   "active": "8656b2c3bf815671",
   "lastOpenFiles": [
+    "深入理解JVM虚拟机/8.字节码执行引擎.md",
+    "深入理解JVM虚拟机/7.类加载机制.md",
+    "深入理解JVM虚拟机/6.类文件结构.md",
+    "深入理解JVM虚拟机/3.垃圾收集器.md",
+    "深入理解JVM虚拟机/2.Java内存区域.md",
+    "深入理解JVM虚拟机/13.线程安全锁优化.md",
     "Java/并发/基础/Thread.md",
     "Java/并发/基础/理论基础.md",
-    "深入理解JVM虚拟机/13.线程安全锁优化.md",
     "深入理解JVM虚拟机/12.内存模型和线程.md",
-    "深入理解JVM虚拟机/12.内存模型和线程/Pasted image 20220512194858.png",
-    "深入理解JVM虚拟机/12.内存模型和线程/Pasted image 20220512192932.png",
-    "深入理解JVM虚拟机/12.内存模型和线程/Pasted image 20220512182158.png",
-    "深入理解JVM虚拟机/11.后端编译与优化.md",
-    "Java/并发/关键字/Volatile.md",
-    "深入理解JVM虚拟机/8.字节码执行引擎.md"
+    "深入理解JVM虚拟机/12.内存模型和线程/Pasted image 20220512194858.png"
   ]
 }
