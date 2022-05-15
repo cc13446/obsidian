@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Mysql技术内幕/3.文件.md",
+            "file": "Mysql技术内幕/4.表.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 182,
-    "collapsed": true
+    "width": 182
   },
   "right": {
     "id": "078c1001f74f4c69",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mysql技术内幕/3.文件.md",
+                "file": "Mysql技术内幕/4.表.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,15 +105,15 @@
   },
   "active": "0dfb797320013c7a",
   "lastOpenFiles": [
+    "Mysql技术内幕/4.表.md",
     "Mysql技术内幕/3.文件.md",
+    "Mysql技术内幕/3.文件/Pasted image 20220515142049.png",
     "Mysql技术内幕/2.InnoDB存储引擎.md",
     "Mysql技术内幕/2.InnoDB存储引擎/Pasted image 20220514150038.png",
     "Pasted image 20220514150036.png",
     "Pasted image 20220514150034.png",
     "Linux内核设计与实现/6.内核数据结构/2.队列.md",
     "Linux内核设计与实现/6.内核数据结构/1.链表.md",
-    "算法/二级指针单向链表.md",
-    "CMU15-445/ppt/01-introduction.pdf",
-    "CMU15-445/book/Modern B-Tree Techniques.pdf"
+    "算法/二级指针单向链表.md"
   ]
 }
