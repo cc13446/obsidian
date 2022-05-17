@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Mysql技术内幕/5.索引.md",
-            "mode": "preview",
+            "file": "Mysql技术内幕/6.锁.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mysql技术内幕/5.索引.md",
+                "file": "Mysql技术内幕/6.锁.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +105,7 @@
   },
   "active": "0dfb797320013c7a",
   "lastOpenFiles": [
+    "Mysql技术内幕/6.锁.md",
     "Mysql技术内幕/5.索引.md",
     "Mysql技术内幕/4.表.md",
     "Mysql技术内幕/2.概述.md",
@@ -113,7 +114,6 @@
     "Mysql技术内幕/2.概述/Pasted image 20220514150038.png",
     "Pasted image 20220514150036.png",
     "Pasted image 20220514150034.png",
-    "Linux内核设计与实现/6.内核数据结构/2.队列.md",
-    "Linux内核设计与实现/6.内核数据结构/1.链表.md"
+    "Linux内核设计与实现/6.内核数据结构/2.队列.md"
   ]
 }
