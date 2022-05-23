@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "0dfb797320013c7a",
+        "id": "acf3f68ef9f9d204",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Mysql技术内幕/7.事务.md",
+            "file": "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
             "mode": "source",
             "source": false
           }
@@ -69,14 +69,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mysql技术内幕/7.事务.md",
+                "file": "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -96,24 +96,25 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "0dfb797320013c7a",
+  "active": "acf3f68ef9f9d204",
   "lastOpenFiles": [
+    "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
+    "Pasted image 20220523092552.png",
+    "Redis/数据类型.md",
+    "Redis/缓存雪崩&击穿&穿透.md",
     "Mysql技术内幕/7.事务.md",
-    "Mysql技术内幕/7.事务/Pasted image 20220519124350.png",
-    "Pasted image 20220519124344.png",
-    "Mysql技术内幕/6.锁.md",
-    "Mysql技术内幕/5.索引.md",
-    "Mysql技术内幕/4.表.md",
-    "Mysql技术内幕/2.概述.md",
-    "Mysql技术内幕/3.文件.md",
-    "Mysql技术内幕/3.文件/Pasted image 20220515142049.png",
-    "Mysql技术内幕/2.概述/Pasted image 20220514150038.png"
+    "Spring Family/Swagger/QuickGuide.md",
+    "Git/Git.md",
+    "Android权威编程指南/3.Activity的生命周期.md",
+    "Android权威编程指南/Android权威编程指南.md",
+    "数据库系统概念/数据库系统概念.md"
   ]
 }
