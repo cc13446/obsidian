@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
+            "file": "Redis设计与实现/1.数据结构与对象/5.跳跃表.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 182
+    "width": 189
   },
   "right": {
     "id": "078c1001f74f4c69",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
+                "file": "Redis设计与实现/1.数据结构与对象/5.跳跃表.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,15 +106,15 @@
   },
   "active": "acf3f68ef9f9d204",
   "lastOpenFiles": [
-    "Redis设计与实现/数据结构与对象/2.简单动态字符串.md",
-    "Pasted image 20220523092552.png",
+    "Redis设计与实现/1.数据结构与对象/5.跳跃表.md",
+    "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524101143.png",
+    "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524101137.png",
     "Redis/数据类型.md",
-    "Redis/缓存雪崩&击穿&穿透.md",
-    "Mysql技术内幕/7.事务.md",
-    "Spring Family/Swagger/QuickGuide.md",
-    "Git/Git.md",
-    "Android权威编程指南/3.Activity的生命周期.md",
-    "Android权威编程指南/Android权威编程指南.md",
-    "数据库系统概念/数据库系统概念.md"
+    "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524100232.png",
+    "Redis设计与实现/1.数据结构与对象/4.字典.md",
+    "Redis/缓存.md",
+    "Redis设计与实现/1.数据结构与对象/2.简单动态字符串.md",
+    "Redis设计与实现/1.数据结构与对象/3.链表.md",
+    "Mac/mac.md"
   ]
 }
