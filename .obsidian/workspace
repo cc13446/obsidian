@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Redis设计与实现/1.数据结构与对象/8.对象.md",
+            "file": "Redis设计与实现/1.数据结构与对象/1.数据类型简介.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Redis设计与实现/1.数据结构与对象/8.对象.md",
+                "file": "Redis设计与实现/1.数据结构与对象/1.数据类型简介.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +106,7 @@
   },
   "active": "acf3f68ef9f9d204",
   "lastOpenFiles": [
+    "Redis设计与实现/1.数据结构与对象/1.数据类型简介.md",
     "Redis设计与实现/1.数据结构与对象/8.对象.md",
     "Redis设计与实现/1.数据结构与对象/4.字典.md",
     "Redis设计与实现/1.数据结构与对象/7.压缩列表.md",
@@ -113,7 +114,6 @@
     "Redis设计与实现/1.数据结构与对象/5.跳跃表.md",
     "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524101143.png",
     "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524101137.png",
-    "Redis/数据类型.md",
     "Redis设计与实现/1.数据结构与对象/5.跳跃表/Pasted image 20220524100232.png",
     "Redis/缓存.md"
   ]
