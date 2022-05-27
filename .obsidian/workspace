@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Redis设计与实现/2.单机数据库的实现/10.RDB持久化.md",
+            "file": "Redis设计与实现/2.单机数据库的实现/11.AOF持久化.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Redis设计与实现/2.单机数据库的实现/10.RDB持久化.md",
+                "file": "Redis设计与实现/2.单机数据库的实现/11.AOF持久化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +106,7 @@
   },
   "active": "acf3f68ef9f9d204",
   "lastOpenFiles": [
+    "Redis设计与实现/2.单机数据库的实现/11.AOF持久化.md",
     "Redis设计与实现/2.单机数据库的实现/10.RDB持久化.md",
     "Redis设计与实现/2.单机数据库的实现/9.数据库.md",
     "Redis/主从复制.md",
@@ -114,7 +115,6 @@
     "Redis/缓存.md",
     "Redis/持久化.md",
     "Redis设计与实现/1.数据结构与对象/1.数据类型简介.md",
-    "Redis设计与实现/1.数据结构与对象/8.对象.md",
-    "Redis设计与实现/1.数据结构与对象/4.字典.md"
+    "Redis设计与实现/1.数据结构与对象/8.对象.md"
   ]
 }
