@@ -1,0 +1,74 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class test {
+    public static void main(String[] args) {
+        QuickSort quickSort = new QuickSort();
+        int[] sourceArray = Arrays.stream(args).mapToInt(s -> {
+            return Integer.valueOf(s);
+        }).toArray();
+
+        int[] arr = quickSort.sort(sourceArray);
+        
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(String.valueOf(arr[i]) + " ");
+        }
+    }
+}
+
+class QuickSort {
+
+    Random rand = new Random();
+
+    public int[] sort(int[] sourceArray) {
+
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        quickSort(arr, 0, arr.length - 1);
+
+        return arr;
+
+    }
+    
+
+    private void quickSort(int[] arr, int left, int right) {
+
+        if (left < right) {
+            int index = partition(arr, left, right);
+            quickSort(arr, left, index - 1);
+            quickSort(arr, index + 1, right);
+        }
+
+    }
+
+    private int partition(int[] arr, int left, int right) {
+        // 加入随机
+        int t = rand.nextInt(right - left + 1) + left;
+        swap(arr, right, t);
+
+        int key = arr[right];
+        // i之前的是比key小的 第i个一定比key大或者还没判定
+        int i = left;
+        for (int j = left; j < right; j++) {
+            // 发现比key小的 就跟第i个换 并且i = i + 1
+            if (arr[j] < key) {
+                swap(arr, i++, j);
+            }
+        }
+        swap(arr, right, i);
+        return i;
+
+    }
+
+
+    private void swap(int[] nums, int i, int j) {
+
+        int temp = nums[i];
+
+        nums[i] = nums[j];
+
+        nums[j] = temp;
+
+    }
+
+}
