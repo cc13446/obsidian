@@ -130,7 +130,7 @@ void createEntry(int hash, K key, V value, int bucketIndex) {
 	size++;
 }
 ```
-在向链表中插入新的`entry`的时候，有两种选择：头插法和尾插法。Java为了简单省时选择了头插法这样也就意味着带来了多线程扩容问题：循环链表，导致后面如果有`get`或者`put`需要遍历链表的时候就会出现死循环。
+在向链表中插入新的`entry`的时候，有两种选择：头插法和尾插法。Java7为了简单省时选择了头插法这样也就意味着带来了多线程扩容问题：循环链表，导致后面如果有`get`或者`put`需要遍历链表的时候就会出现死循环。
 
 ### 扩容
 ```java
@@ -178,10 +178,89 @@ void transfer(Entry[] newTable, boolean rehash) {
 4. 数组扩容之后，迁移数据，槽位要么是在原来的地方，要么是原来的槽位+原来数组长度
 5. 扩容多线程会产生循环链表，再次遍历的时候就会死循环
 
+### 死循环问题
+```java
+void transfer(Entry[] newTable, boolean rehash) {
+	int newCapacity = newTable.length;
+	for (Entry<K,V> e : table) {
+		while(null != e) {
+			Entry<K,V> next = e.next;
+			// 对于线程 T1 和 T2 都在这里挂起
+			// 等T1推出循环之后，T2再执行
+			if (rehash) {
+				e.hash = null == e.key ? 0 : hash(e.key);
+			}
+			//重新计算操作
+			int i = indexFor(e.hash, newCapacity);
+			e.next = newTable[i];
+			newTable[i] = e;
+			e = next;
+		}
+	}
+}
+```
+#### 1.都挂起
+![](HashMap%20&%20HashSet/Pasted%20image%2020220705223414.png)
+#### 2. T1执行结束
+![](HashMap%20&%20HashSet/Pasted%20image%2020220705223451.png)
+#### 3. T2开始执行
+##### 第一个循环
+```java
+if (rehash) {
+	e.hash = null == e.key ? 0 : hash(e.key);
+}
+//重新计算操作
+int i = indexFor(e.hash, newCapacity);
+// A 的 next 指向null，因为这里 newTable 是T2建立的，不是T1的
+e.next = newTable[i];
+// T2 的 newTable[i] = A
+newTable[i] = e;
+// e 变成 B
+e = next;
+```
+![](HashMap%20&%20HashSet/Pasted%20image%2020220705225803.png)
+##### 第二个循环
+```java
+// e 为 B 
+// next 为 A
+Entry<K,V> next = e.next;
+if (rehash) {
+	e.hash = null == e.key ? 0 : hash(e.key);
+}
+//重新计算操作
+int i = indexFor(e.hash, newCapacity);
+// B 的 next 设置为 A
+e.next = newTable[i];
+// T2 的 newTable[i] = B
+newTable[i] = e;
+// e 变成 A
+e = next;
+```
+![](HashMap%20&%20HashSet/Pasted%20image%2020220705230358.png)
+##### 第三轮循环
+```java
+// e 为 A
+// next 为 null
+Entry<K,V> next = e.next;
+if (rehash) {
+	e.hash = null == e.key ? 0 : hash(e.key);
+}
+//重新计算操作
+int i = indexFor(e.hash, newCapacity);
+// A 的 next 设置为 B 循环生成
+e.next = newTable[i];
+// T1 的 newTable[i] = A
+newTable[i] = e;
+// e 变成 null 结束循环
+e = next;
+```
+![](HashMap%20&%20HashSet/Pasted%20image%2020220705230820.png)
+
 ## Java8
 ### 概述
 ![[HashMap_java8_struct.png]]
-Java8 对 `HashMap` 进行了一些修改，最大的不同就是利用了红黑树，所以其由数组+链表+红黑树组成。
+
+Java8 对 `HashMap` 进行了一些修改，最大的不同就是利用了红黑树，所以由数组+链表+红黑树组成。
 ```java
 // 序列化Id,版本号
 private static final long serialVersionUID = 362498820763181265L; 
@@ -209,7 +288,6 @@ transient int modCount;
 int threshold;
 // 填充因子
 final float loadFactor;
-
 ```
 ### hash扰动
 ```java
@@ -238,18 +316,22 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
 	// tab:hashMap的数组
 	// p:key对应的具体Node
 	// n:hashMap数组长度
-	// i:
+	// i:hash值
     Node<K,V>[] tab; Node<K,V> p; int n, i;
-    // 第一次 put 值的时候，会触发下面的 resize()，类似 java7 的第一次 put 也要初始化数组长度
-    // 第一次 resize 和后续的扩容有些不一样，因为这次是数组从 null 初始化到默认的 16 或自定义的初始容量
+    // 第一次 put 值的时候，会触发下面的 resize()
+    // 类似 java7 的第一次 put 也要初始化数组长度
+    // 第一次 resize 和后续的扩容有些不一样
+    // 这次是数组从 null 初始化到默认的 16 或自定义的初始容量
     if ((tab = table) == null || (n = tab.length) == 0)
         n = (tab = resize()).length;
-    // 找到具体的数组下标，如果此位置没有值，那么直接初始化一下 Node 并放置在这个位置就可以了
+    // 找到具体的数组下标，如果此位置没有值，
+    // 那么直接初始化一下 Node 并放置在这个位置就可以了
     if ((p = tab[i = (n - 1) & hash]) == null)
         tab[i] = newNode(hash, key, value, null);
     else {
         Node<K,V> e; K k;
-        // 首先，判断该位置的第一个数据和我们要插入的数据，key 是不是相等，如果是，取出这个节点
+        // 首先，判断该位置的第一个数据和我们要插入的数据，key 是不是相等
+        // 如果是，取出这个节点
         if (p.hash == hash && ((k = p.key) == key || (key != null && key.equals(k))))
             e = p;
         // 如果该节点是代表红黑树的节点，调用红黑树的插值方法
@@ -259,6 +341,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
             // 到这里，说明数组该位置上是一个链表
             for (int binCount = 0; ; ++binCount) {
                 // 插入到链表的最后面(Java7 是插入到链表的最前面)
+                // 也就避免了死循环
                 if ((e = p.next) == null) {
                     p.next = newNode(hash, key, value, null);
                     // TREEIFY_THRESHOLD 为 8，如果新插入的值是链表中的第 8 个
@@ -267,7 +350,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
                         treeifyBin(tab, hash);
                     break;
                 }
-                // 如果在该链表中找到了相等的 key(== 或 equals)
+                // 如果在该链表中找到了相等的 key (== 或 equals)
                 if (e.hash == hash &&
                     ((k = e.key) == key || (key != null && key.equals(k))))
                     // 此时 e 为链表中与要插入的新值的key相等的 node
