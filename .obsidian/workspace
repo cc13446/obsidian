@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "65212668621d9be4",
+    "id": "1a6826e3f2848baa",
     "type": "split",
     "children": [
       {
-        "id": "57d25031ad4122ff",
+        "id": "0080f53402cbde08",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "48cc13a56e970c56",
+    "id": "81cd48c028fd70e9",
     "type": "split",
     "children": [
       {
-        "id": "2affd474b5fb8e39",
+        "id": "9a4549caaa130918",
         "type": "tabs",
         "children": [
           {
-            "id": "cc420eb03298e963",
+            "id": "7ec51ee3b77eb1c9",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,7 +35,7 @@
             }
           },
           {
-            "id": "877d8120fe5c9296",
+            "id": "229cbc3d4cf6abca",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -48,23 +48,31 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "9a900567ea451dfd",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 249
+    "width": 300
   },
   "right": {
-    "id": "078c1001f74f4c69",
+    "id": "2574059c4c821c0a",
     "type": "split",
     "children": [
       {
-        "id": "c2127b3421ddab18",
+        "id": "d1fb2fd4cdb7e907",
         "type": "tabs",
         "children": [
           {
-            "id": "8514b8e57c8f6757",
+            "id": "1f7765eb8ba70369",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -75,46 +83,55 @@
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "1e24ee3688a20d59",
+            "id": "6bed40acc2bb9a81",
             "type": "leaf",
             "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
+              "type": "outgoing-link",
+              "state": {
+                "file": "深入理解JVM虚拟机/2.Java内存区域.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
             }
           },
           {
-            "id": "042f8faf5f3fc7f0",
+            "id": "f1772bee0c09c1dc",
             "type": "leaf",
             "state": {
-              "type": "git-view",
-              "state": {}
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8a30e418122a8d95",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "深入理解JVM虚拟机/2.Java内存区域.md"
+              }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "57d25031ad4122ff",
+  "active": "0080f53402cbde08",
   "lastOpenFiles": [
-    "Go专家编程/1.常见数据结构实现原理/slice.md",
     "Go专家编程/1.常见数据结构实现原理/chan.md",
-    "Linux内核设计与实现/6.内核数据结构/2.队列.md",
-    "Linux内核设计与实现/6.内核数据结构/1.链表.md",
-    "Kubernetes/quick start/搭建实验集群.md",
-    "Java/并发/工具类/CountDownLatch.md",
-    "数据结构/RedBlackTree.md",
-    "数据结构/Heap.md",
     "深入理解JVM虚拟机/2.Java内存区域.md",
-    "算法/二叉树/迭代遍历.md"
+    "深入理解JVM虚拟机/2.Java内存区域/Pasted image 20220507134623.png"
   ]
 }
