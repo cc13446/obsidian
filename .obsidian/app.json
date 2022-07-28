@@ -11,5 +11,6 @@
   "livePreview": true,
   "promptDelete": false,
   "newLinkFormat": "relative",
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "communityPluginSortOrder": "download"
 }
