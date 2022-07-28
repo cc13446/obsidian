@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Docker从入门到实践/1.基本概念.md",
+            "file": "Docker容器与容器云/3.Docker核心原理解读.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 208,
+    "collapsed": true
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -69,14 +70,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker从入门到实践/1.基本概念.md",
+                "file": "Docker容器与容器云/3.Docker核心原理解读.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -120,10 +121,13 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7ec51ee3b77eb1c9",
+  "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "Docker容器与容器云/基本概念.md",
+    "Docker容器与容器云/3.Docker核心原理解读.md",
+    "Docker容器与容器云/1.从容器到容器云.md",
     "Untitled.md",
-    "Docker从入门到实践/1.基本概念.md",
+    "Docker从入门到实践/2.使用镜像.md",
     "docker_practice/data_management/volume.md",
     "Go专家编程/1.常见数据结构实现原理/slice.md",
     "Go专家编程/1.常见数据结构实现原理/chan.md",
