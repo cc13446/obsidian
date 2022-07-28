@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Docker容器与容器云/3.Docker核心原理解读.md",
+            "file": "Docker容器与容器云/3.1 Docker 背后的内核知识.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 208,
+    "width": 267,
     "collapsed": true
   },
   "right": {
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker容器与容器云/3.Docker核心原理解读.md",
+                "file": "Docker容器与容器云/3.1 Docker 背后的内核知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,10 +121,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0080f53402cbde08",
+  "active": "7ec51ee3b77eb1c9",
   "lastOpenFiles": [
     "Docker容器与容器云/基本概念.md",
-    "Docker容器与容器云/3.Docker核心原理解读.md",
+    "Docker容器与容器云/3.1 Docker 背后的内核知识.md",
     "Docker容器与容器云/1.从容器到容器云.md",
     "Untitled.md",
     "Docker从入门到实践/2.使用镜像.md",
