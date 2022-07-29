@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Docker容器与容器云/3.4 libcontainer.md",
+            "file": "Kubevirt/1.基本概念.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267,
-    "collapsed": true
+    "width": 267
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker容器与容器云/3.4 libcontainer.md",
+                "file": "Kubevirt/1.基本概念.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,17 +120,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0080f53402cbde08",
+  "active": "7ec51ee3b77eb1c9",
   "lastOpenFiles": [
-    "Docker容器与容器云/3.3 Client和Daemon.md",
+    "Kubevirt/1.基本概念/Pasted image 20220729172849.png",
+    "Kubevirt/1.基本概念.md",
     "Docker容器与容器云/3.4 libcontainer.md",
+    "Docker容器与容器云/3.3 Client和Daemon.md",
     "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729113907.png",
     "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729110815.png",
     "Docker容器与容器云/3.2 Docker架构概览.md",
     "Docker容器与容器云/3.1 Docker背后的内核知识.md",
     "Docker容器与容器云/基本概念.md",
-    "Docker容器与容器云/1. 从容器到容器云.md",
-    "Untitled.md",
-    "Docker从入门到实践/2.使用镜像.md"
+    "Docker容器与容器云/1. 从容器到容器云.md"
   ]
 }
