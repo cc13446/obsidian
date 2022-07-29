@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Docker容器与容器云/3.3 Client和Daemon.md",
+            "file": "Docker容器与容器云/3.4 libcontainer.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker容器与容器云/3.3 Client和Daemon.md",
+                "file": "Docker容器与容器云/3.4 libcontainer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,15 +123,15 @@
   },
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
-    "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729110815.png",
     "Docker容器与容器云/3.3 Client和Daemon.md",
+    "Docker容器与容器云/3.4 libcontainer.md",
+    "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729113907.png",
+    "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729110815.png",
     "Docker容器与容器云/3.2 Docker架构概览.md",
     "Docker容器与容器云/3.1 Docker背后的内核知识.md",
     "Docker容器与容器云/基本概念.md",
     "Docker容器与容器云/1. 从容器到容器云.md",
     "Untitled.md",
-    "Docker从入门到实践/2.使用镜像.md",
-    "docker_practice/data_management/volume.md",
-    "Go专家编程/1.常见数据结构实现原理/slice.md"
+    "Docker从入门到实践/2.使用镜像.md"
   ]
 }
