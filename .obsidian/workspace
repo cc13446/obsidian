@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Kubevirt/1.基本概念.md",
+            "file": "Docker容器与容器云/3.4 libcontainer.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267
+    "width": 267,
+    "collapsed": true
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubevirt/1.基本概念.md",
+                "file": "Docker容器与容器云/3.4 libcontainer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,17 +121,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7ec51ee3b77eb1c9",
+  "active": "0080f53402cbde08",
   "lastOpenFiles": [
-    "Kubevirt/1.基本概念/Pasted image 20220729172849.png",
-    "Kubevirt/1.基本概念.md",
-    "Docker容器与容器云/3.4 libcontainer.md",
     "Docker容器与容器云/3.3 Client和Daemon.md",
+    "Docker容器与容器云/3.4 libcontainer.md",
+    "Kubernetes/quick start/搭建实验集群.md",
+    "Kubevirt/1.基本概念.md",
+    "Kubevirt/1.基本概念/Pasted image 20220729172849.png",
     "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729113907.png",
     "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729110815.png",
     "Docker容器与容器云/3.2 Docker架构概览.md",
     "Docker容器与容器云/3.1 Docker背后的内核知识.md",
-    "Docker容器与容器云/基本概念.md",
-    "Docker容器与容器云/1. 从容器到容器云.md"
+    "Docker容器与容器云/基本概念.md"
   ]
 }
