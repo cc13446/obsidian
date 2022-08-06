@@ -7,12 +7,8 @@
         "id": "0080f53402cbde08",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Kubernates权威指南/1. 基本概念和术语.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,68 +65,42 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernates权威指南/1. 基本概念和术语.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
-            "id": "6bed40acc2bb9a81",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "深入理解JVM虚拟机/2.Java内存区域.md",
-                "linksCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f1772bee0c09c1dc",
+            "id": "2069e7c5bff05056",
             "type": "leaf",
             "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "8a30e418122a8d95",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "深入理解JVM虚拟机/2.Java内存区域.md"
-              }
+              "type": "git-view",
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "Go专家编程/1.常见数据结构实现原理/map.md",
+    "Go专家编程/1.常见数据结构实现原理/chan.md",
+    "Go专家编程/1.常见数据结构实现原理/slice.md",
+    "Kubernates权威指南/1. 基本概念和术语.md",
     "Kubernates权威指南/5. 核心组件的运行机制.md",
     "Kubernates权威指南/7. 网络原理.md",
-    "Kubernates权威指南/1. 基本概念和术语.md",
     "Kubevirt/1.基本概念.md",
     "Docker容器与容器云/3.4 libcontainer.md",
     "Untitled.md",
-    "Docker容器与容器云/3.3 Client和Daemon.md",
-    "Kubernetes/quick start/搭建实验集群.md",
-    "Kubevirt/1.基本概念/Pasted image 20220729172849.png",
-    "Docker容器与容器云/3.3 Client和Daemon/Pasted image 20220729113907.png"
+    "Docker容器与容器云/3.3 Client和Daemon.md"
   ]
 }
