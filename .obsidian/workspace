@@ -100,14 +100,14 @@
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
     "Go语言设计与实现/数据结构/哈希表.md",
+    "算法/排序/堆排序.md",
+    "算法/桶/桶.md",
     "Go语言设计与实现/数据结构/切片.md",
     "Go语言设计与实现/数据结构/数组.md",
     "Go专家编程/1.常见数据结构实现原理/map.md",
     "Go专家编程/1.常见数据结构实现原理/chan.md",
     "Go专家编程/1.常见数据结构实现原理/slice.md",
     "Kubernates权威指南/1. 基本概念和术语.md",
-    "Kubernates权威指南/5. 核心组件的运行机制.md",
-    "Kubernates权威指南/7. 网络原理.md",
-    "Kubevirt/1.基本概念.md"
+    "Kubernates权威指南/5. 核心组件的运行机制.md"
   ]
 }
