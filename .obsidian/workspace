@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ODL技术内幕/ODL框架.md",
+            "file": "ODL技术内幕/ODL基本对象.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ODL技术内幕/ODL框架.md",
+                "file": "ODL技术内幕/ODL基本对象.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,8 +96,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7ec51ee3b77eb1c9",
+  "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "ODL技术内幕/ODL框架.md",
     "SDN架构与实现/3. SDN 控制平面.md",
     "SDN架构与实现/2. SDN 南向协议.md",
     "SDN架构与实现/1. 什么是 SDN.md",
@@ -106,7 +107,6 @@
     "算法/排序/堆排序.md",
     "算法/桶/桶.md",
     "Go语言设计与实现/数据结构/切片.md",
-    "Go语言设计与实现/数据结构/数组.md",
-    "Go专家编程/1.常见数据结构实现原理/map.md"
+    "Go语言设计与实现/数据结构/数组.md"
   ]
 }
