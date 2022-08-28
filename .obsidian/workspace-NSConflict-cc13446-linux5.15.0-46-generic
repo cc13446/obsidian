@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Go语言设计与实现/数据结构/字符串.md",
+            "file": "ODL技术内幕/ODL基本对象.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267,
-    "collapsed": true
+    "width": 267
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Go语言设计与实现/数据结构/字符串.md",
+                "file": "ODL技术内幕/ODL基本对象.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,15 +97,15 @@
   },
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "ODL技术内幕/ODL框架.md",
+    "ODL技术内幕/ODL基本对象.md",
+    "SDN架构与实现/3. SDN 控制平面.md",
+    "SDN架构与实现/2. SDN 南向协议.md",
+    "SDN架构与实现/1. 什么是 SDN.md",
     "Go语言设计与实现/数据结构/字符串.md",
-    "Netty/Netty.md",
-    "算法/柱状图和单调栈.md",
-    "算法/摩尔投票法.md",
-    "算法/二级指针单向链表.md",
-    "算法/背包问题.md",
-    "算法/字符串/前缀树.md",
-    "算法/字符串/KMP算法.md",
-    "算法/链表/环形链表.md",
-    "算法/二叉树/迭代遍历.md"
+    "Go语言设计与实现/数据结构/哈希表.md",
+    "算法/排序/堆排序.md",
+    "算法/桶/桶.md",
+    "Go语言设计与实现/数据结构/切片.md"
   ]
 }
