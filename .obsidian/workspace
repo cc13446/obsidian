@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Go语言设计与实现/语言基础/函数调用.md",
+            "file": "Go语言设计与实现/语言基础/接口.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Go语言设计与实现/语言基础/函数调用.md",
+                "file": "Go语言设计与实现/语言基础/接口.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +98,7 @@
   },
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "Go语言设计与实现/语言基础/接口.md",
     "Go语言设计与实现/语言基础/函数调用.md",
     "Go语言设计与实现/数据结构/字符串.md",
     "Netty/Netty.md",
@@ -106,7 +107,6 @@
     "算法/二级指针单向链表.md",
     "算法/背包问题.md",
     "算法/字符串/前缀树.md",
-    "算法/字符串/KMP算法.md",
-    "算法/链表/环形链表.md"
+    "算法/字符串/KMP算法.md"
   ]
 }
