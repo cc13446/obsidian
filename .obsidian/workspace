@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "GRPC/3.通信模式.md",
+            "file": "GRPC/4底层原理.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 185
+    "width": 185,
+    "collapsed": true
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GRPC/3.通信模式.md",
+                "file": "GRPC/4底层原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +98,7 @@
   },
   "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "GRPC/3.通信模式.md",
     "GRPC/1.简介.md",
     "Go语言设计与实现/语言基础/接口.md",
     "Go语言设计与实现/语言基础/函数调用.md",
@@ -105,7 +107,6 @@
     "算法/柱状图和单调栈.md",
     "算法/摩尔投票法.md",
     "算法/二级指针单向链表.md",
-    "算法/背包问题.md",
-    "算法/字符串/前缀树.md"
+    "算法/背包问题.md"
   ]
 }
