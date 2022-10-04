@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "GRPC/4底层原理.md",
+            "file": "GRPC/4.底层原理.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 185,
-    "collapsed": true
+    "width": 185
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GRPC/4底层原理.md",
+                "file": "GRPC/4.底层原理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,17 +95,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0080f53402cbde08",
+  "active": "7ec51ee3b77eb1c9",
   "lastOpenFiles": [
     "GRPC/3.通信模式.md",
+    "GRPC/4.底层原理/Pasted image 20221004221649.png",
+    "GRPC/4.底层原理.md",
+    "Pasted image 20221004225612.png",
+    "GRPC/4.底层原理/Pasted image 20221004225615.png",
     "GRPC/1.简介.md",
     "Go语言设计与实现/语言基础/接口.md",
     "Go语言设计与实现/语言基础/函数调用.md",
     "Go语言设计与实现/数据结构/字符串.md",
-    "Netty/Netty.md",
-    "算法/柱状图和单调栈.md",
-    "算法/摩尔投票法.md",
-    "算法/二级指针单向链表.md",
-    "算法/背包问题.md"
+    "Netty/Netty.md"
   ]
 }
