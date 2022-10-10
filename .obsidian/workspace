@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "GRPC/4.底层原理.md",
+            "file": "GRPC/5. 高级应用.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 185
+    "width": 185,
+    "collapsed": true
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GRPC/4.底层原理.md",
+                "file": "GRPC/5. 高级应用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -79,14 +80,6 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "2069e7c5bff05056",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
         ]
       }
@@ -95,11 +88,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7ec51ee3b77eb1c9",
+  "active": "0080f53402cbde08",
   "lastOpenFiles": [
+    "GRPC/4.底层原理.md",
     "GRPC/3.通信模式.md",
     "GRPC/4.底层原理/Pasted image 20221004221649.png",
-    "GRPC/4.底层原理.md",
     "Pasted image 20221004225612.png",
     "GRPC/4.底层原理/Pasted image 20221004225615.png",
     "GRPC/1.简介.md",
