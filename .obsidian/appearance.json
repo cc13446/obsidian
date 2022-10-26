@@ -4,5 +4,6 @@
   "translucency": false,
   "baseFontSize": 15,
   "textFontFamily": "苹方",
-  "monospaceFontFamily": "JetBrains Mono"
+  "monospaceFontFamily": "JetBrains Mono",
+  "accentColor": ""
 }
