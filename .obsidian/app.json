@@ -12,5 +12,6 @@
   "promptDelete": false,
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
-  "communityPluginSortOrder": "download"
+  "communityPluginSortOrder": "download",
+  "attachmentFolderPath": "Vue.js设计与实现/3. vue 3 的设计思路"
 }

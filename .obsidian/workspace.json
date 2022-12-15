@@ -4,22 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "017b2c18e13e4e74",
+        "id": "423025c4a4cd9fb5",
         "type": "tabs",
         "children": [
           {
-            "id": "d7132f2520681320",
+            "id": "cddd7270327ac421",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mysql技术内幕/6.锁.md",
+                "file": "Vue.js设计与实现/1. 权衡的艺术.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b06d979da6aafddd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Vue.js设计与实现/2.  框架设计的核心要素.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b05c27dd4ac6e37c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Vue.js设计与实现/3. vue 3 的设计思路.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -77,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mysql技术内幕/6.锁.md",
+                "file": "Vue.js设计与实现/3. vue 3 的设计思路.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,20 +120,17 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "d7132f2520681320",
+  "active": "b05c27dd4ac6e37c",
   "lastOpenFiles": [
-    "Mysql技术内幕/3.文件.md",
-    "Kubernates权威指南/1. 基本概念和术语.md",
-    "Mysql技术内幕/7.事务.md",
-    "Mysql技术内幕/6.锁.md",
-    "Mysql技术内幕/5.索引.md",
-    "Mysql技术内幕/2.概述.md",
-    "Mysql技术内幕/4.表.md",
-    "GRPC/5. 高级应用.md",
-    "GRPC/4.底层原理.md",
-    "GRPC/3.通信模式.md"
+    "Vue.js设计与实现/2.  框架设计的核心要素.md",
+    "Vue.js设计与实现/1. 权衡的艺术.md",
+    "Pasted image 20221215223908.png",
+    "Go语言设计与实现/语言基础/函数调用.md",
+    "算法/二叉树/迭代遍历.md",
+    "数据结构/Heap.md",
+    "数据结构/RedBlackTree.md",
+    "ODL技术内幕/ODL基本对象.md",
+    "ODL技术内幕/ODL框架.md",
+    "Mysql技术内幕/4.表.md"
   ]
 }
