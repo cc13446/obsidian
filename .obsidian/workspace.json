@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "9f6cdaa4238ebf57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Vue.js设计与实现/4. 响应系统的作用与实现.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -86,7 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 185
+    "width": 204.5
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -102,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vue.js设计与实现/3. vue 3 的设计思路.md",
+                "file": "Vue.js设计与实现/4. 响应系统的作用与实现.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,17 +132,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "b05c27dd4ac6e37c",
+  "active": "9f6cdaa4238ebf57",
   "lastOpenFiles": [
+    "Vue.js设计与实现/3. vue 3 的设计思路.md",
     "Vue.js设计与实现/2.  框架设计的核心要素.md",
     "Vue.js设计与实现/1. 权衡的艺术.md",
-    "Pasted image 20221215223908.png",
-    "Go语言设计与实现/语言基础/函数调用.md",
-    "算法/二叉树/迭代遍历.md",
-    "数据结构/Heap.md",
-    "数据结构/RedBlackTree.md",
-    "ODL技术内幕/ODL基本对象.md",
-    "ODL技术内幕/ODL框架.md",
-    "Mysql技术内幕/4.表.md"
+    "Linux/NIO.md",
+    "Linux/零拷贝技术.md",
+    "Kubevirt/1.基本概念.md",
+    "Kubernates权威指南/1. 基本概念和术语.md",
+    "Kubernetes/quick start/搭建实验集群.md",
+    "Java/并发/锁/AQS.md",
+    "Go语言设计与实现/数据结构/字符串.md"
   ]
 }

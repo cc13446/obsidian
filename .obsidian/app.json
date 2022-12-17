@@ -13,5 +13,5 @@
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "communityPluginSortOrder": "download",
-  "attachmentFolderPath": "Vue.js设计与实现/3. vue 3 的设计思路"
+  "attachmentFolderPath": "Vue.js设计与实现/4. 响应系统的作用与实现"
 }
