@@ -4,59 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "423025c4a4cd9fb5",
+        "id": "1f8b5fe0943ab811",
         "type": "tabs",
         "children": [
           {
-            "id": "cddd7270327ac421",
+            "id": "ebdb3c3f45636a99",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vue.js设计与实现/1. 权衡的艺术.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b06d979da6aafddd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vue.js设计与实现/2.  框架设计的核心要素.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b05c27dd4ac6e37c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vue.js设计与实现/3. vue 3 的设计思路.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9f6cdaa4238ebf57",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vue.js设计与实现/4. 响应系统的作用与实现.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vue.js设计与实现/4. 响应系统的作用与实现.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,8 +90,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9f6cdaa4238ebf57",
+  "active": "7ec51ee3b77eb1c9",
   "lastOpenFiles": [
+    "Vue.js设计与实现/4. 响应系统的作用与实现.md",
     "Vue.js设计与实现/3. vue 3 的设计思路.md",
     "Vue.js设计与实现/2.  框架设计的核心要素.md",
     "Vue.js设计与实现/1. 权衡的艺术.md",
@@ -142,7 +101,6 @@
     "Kubevirt/1.基本概念.md",
     "Kubernates权威指南/1. 基本概念和术语.md",
     "Kubernetes/quick start/搭建实验集群.md",
-    "Java/并发/锁/AQS.md",
-    "Go语言设计与实现/数据结构/字符串.md"
+    "Java/并发/锁/AQS.md"
   ]
 }
