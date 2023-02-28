@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1f8b5fe0943ab811",
+        "id": "fdc7627399cdf8f4",
         "type": "tabs",
         "children": [
           {
-            "id": "ebdb3c3f45636a99",
+            "id": "3c7bc86aef6355de",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Java/并发/关键字/Volatile.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -73,7 +77,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "file": "Java/并发/关键字/Volatile.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -82,25 +87,59 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "3d73f8e9b10a16fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Java/并发/关键字/Volatile.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "7ec51ee3b77eb1c9",
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:新建白板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "command-palette:打开命令面板": false,
+      "markdown-importer:打开 Markdown 格式转换器": false
+    }
+  },
+  "active": "3c7bc86aef6355de",
   "lastOpenFiles": [
-    "Vue.js设计与实现/4. 响应系统的作用与实现.md",
-    "Vue.js设计与实现/3. vue 3 的设计思路.md",
-    "Vue.js设计与实现/2.  框架设计的核心要素.md",
-    "Vue.js设计与实现/1. 权衡的艺术.md",
-    "Linux/NIO.md",
-    "Linux/零拷贝技术.md",
-    "Kubevirt/1.基本概念.md",
-    "Kubernates权威指南/1. 基本概念和术语.md",
-    "Kubernetes/quick start/搭建实验集群.md",
-    "Java/并发/锁/AQS.md"
+    "算法/数组/二分查找.md",
+    "深入理解JVM虚拟机/2.Java内存区域.md",
+    "Java/并发/集合/ConcurrentHashMap.md",
+    "Java/并发/集合/BlockQueue.md",
+    "Java/并发/关键字/Volatile.md",
+    "Java/并发/关键字/Synchronized.md",
+    "Java/并发/工具类/CountDownLatch.md",
+    "Java/并发/锁/ReentrantLock.md",
+    "Java/并发/锁/LockSupport.md",
+    "Java/并发/锁/AQS.md",
+    "Java/并发/工具类/Exchanger.md",
+    "Java/并发/工具类/CyclicBarrier.md",
+    "Java/并发/工具类/ThreadLocal.md",
+    "Java/并发/集合/ConcurrentLinkedQueue.md",
+    "算法/背包问题.md",
+    "算法/柱状图和单调栈.md",
+    "算法/摩尔投票法.md",
+    "算法/字符串/KMP算法.md",
+    "算法/字符串/前缀树.md",
+    "算法/桶/桶.md",
+    "算法/排序/快排.md",
+    "算法/排序/归并排序.md",
+    "算法/排序/堆排序.md",
+    "算法/链表/环形链表.md"
   ]
 }

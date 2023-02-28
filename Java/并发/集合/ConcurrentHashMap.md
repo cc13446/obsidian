@@ -84,7 +84,7 @@ static final <K,V> HashEntry<K,V> entryAt(HashEntry<K,V>[] tab, int i) {
 		UNSAFE.getObjectVolatile(tab, ((long)i << TSHIFT) + TBASE);
 }
 ```
-### setEntryAt set HashEntry
+### setEntryAt
 ```java
 //设置给定的table的第i个元素,使用volatile写语义
 static final <K,V> void setEntryAt(HashEntry<K,V>[] tab, int i,
