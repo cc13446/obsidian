@@ -482,7 +482,7 @@ final V remove(Object key, int hash, Object value) {
 在并发编程中，`null` 值容易引来歧义， 假如先调用 `get(key)` 返回的结果是 `null`，那么我们无法确认是因为当时这个 `key` 对应的 `value` 本身放的就是 `null`，还是说这个 `key` 值根本不存在，这会引起歧义，如果在非并发编程中，可以进一步通过调用 `containsKey` 方法来进行判断，但是并发编程中无法保证两个方法之间没有其他线程来修改 `key` 值，所以就直接禁止了 `null` 值的存在。
 
 ## sizeCtl 的四个含义
-1.   `sizeCtl<-1` 表示有 `N-1` 个线程正在执行扩容操作，如 `-2` 就表示有 `2-1` 个线程正在扩容。
+1. `sizeCtl<-1` 表示有 `N-1` 个线程正在执行扩容操作，如 `-2` 就表示有 `2-1` 个线程正在扩容。
 2. `sizeCtl=-1` 占位符，表示当前正在初始化数组。
 3. `sizeCtl=0` 默认状态，表示数组还没有被初始化。
 4. `sizeCtl>0` 记录下一次需要扩容的大小。
@@ -714,7 +714,7 @@ private final void addCount(long x, int check) {
 		// 且线程被分配到的格子不为空，且修改 value 成功。
 		// 但是这里没明白为什么小于等于1，就直接返回了
 		// 这里我怀疑之前的方法漏掉了binCount=0的情况。
-		//而且此处若返回了，后边怎么判断扩容？（存疑）
+		// 而且此处若返回了，后边怎么判断扩容？（存疑）
 		if (check <= 1)
 			return;
 		//计算总共的元素个数
@@ -1062,10 +1062,10 @@ private final void tryPresize(int size) {
 static final class ForwardingNode<K,V> extends Node<K,V> {
 	final Node<K,V>[] nextTable;
 	ForwardingNode(Node<K,V>[] tab) {
-	//把当前桶的头结点的 hash 值设置为 -1，表明已经迁移完成，
-	//这个节点中并不存储有效的数据
-	super(MOVED, null, null, null);
-	this.nextTable = tab;
+		//把当前桶的头结点的 hash 值设置为 -1，表明已经迁移完成，
+		//这个节点中并不存储有效的数据
+		super(MOVED, null, null, null);
+		this.nextTable = tab;
 	}
 }
 
