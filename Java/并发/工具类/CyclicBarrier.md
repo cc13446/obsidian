@@ -223,8 +223,6 @@ private Node enq(final Node node) {
 ```
 ![[Pasted image 20220502170947.png]]
 
-![](https://pdai-1257820000.cos.ap-beijing.myqcloud.com/pdai.tech/public/_images/thread/java-thread-x-cyclicbarrier-2.png)
-
 ## breakBarrier函数
 ```java
 // 此函数的作用是损坏当前屏障，会唤醒所有在屏障中的线程

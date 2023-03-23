@@ -73,7 +73,7 @@ ObjectMonitor() {
 `Monitor`对象存在于每个`Java`对象的对象头`Mark Word`中，`Synchronized`锁便是通过这种方式获取锁的，也是为什么`Java`中任意对象可以作为锁的原因，同时`notify/notifyAll/wait`等方法会使用到`Monitor`锁对象，所以必须在同步代码块中使用。
 
 ### wait
-```C++
+```cpp
 // Wait 方法
 void ObjectSynchronizer::wait(Handle obj, jlong millis, TRAPS) {
 
@@ -109,7 +109,7 @@ inline void ObjectMonitor::AddWaiter(ObjectWaiter* node) {
 ```
 
 ### notify
-```C++
+```cpp
 // notify方法
 void ObjectSynchronizer::notify(Handle obj, TRAPS) {
 	// ...
