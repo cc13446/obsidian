@@ -101,9 +101,9 @@ int main(int argc, char* argv[]) {
 ### 管道的实现 
 管道本质上是由内存管理的一个环形缓冲区，一般4k大小。当管道中没有消息的时候，读管道的进程会阻塞，当管道信息满的时候，写管道的进程会阻塞。
 
-![](Lab_01_utilities/Pasted%20image%2020230416133700.png)
+![](Lab01%20utilities/Pasted%20image%2020230416133700.png)
 
 在Linux系统中，管道并没有专门的数据结构来实现，而是借助了文件系统的`file`结构和VFS的索引节点`inode`。将两个`file`结构指向同一个临时的VFS索引节点，这样两个进程就可以像操作文件一样操作管道了。这个临时的`inode`通过内存文件的方式进行实现，当管道都被关闭时，此内存文件被释放。
 
-![](Lab_01_utilities/Pasted%20image%2020230416133731.png)
+![](Lab01%20utilities/Pasted%20image%2020230416133731.png)
 
