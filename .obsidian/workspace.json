@@ -4,47 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "3a4d07a4d53e672d",
+        "id": "d870a4a331ae5884",
         "type": "tabs",
         "children": [
           {
-            "id": "f95cd0d19e42883f",
+            "id": "30af2c623bdf20d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6.828/Lab01 utilities.md",
+                "file": "6.828/Lec04 page tables.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7823dce3ffd68f40",
+            "id": "bc8200c03b010e1f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6.828/Lec03 os organization.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "129522944aba31e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6.828/Lab02 system call.md",
+                "file": "6.828/Lec04 page tables.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -102,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6.828/Lab02 system call.md",
+                "file": "6.828/Lec04 page tables.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6.828/Lab02 system call.md"
+                "file": "6.828/Lec04 page tables.md"
               }
             }
           }
@@ -141,11 +129,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "129522944aba31e5",
+  "active": "bc8200c03b010e1f",
   "lastOpenFiles": [
     "6.828/Lec03 os organization.md",
+    "6.828/Lab03 page table.md",
     "6.828/Lab02 system call.md",
     "6.828/Lab01 utilities.md",
+    "6.828/Lec04 page tables.md",
     "算法/排序/快排.md",
     "算法/排序/归并排序.md",
     "6.828/Lab01 utilities/pipe.drawio",
@@ -173,8 +163,6 @@
     "Vue.js设计与实现/1. 权衡的艺术.md",
     "Java/并发/原子类/CAS & Unsafe.md",
     "Java/并发/线程池/ThreadPoolExecutor.md",
-    "Java/并发/线程池/FutureTask.md",
-    "Java/并发/锁/ReentrantLock.md",
     "深入理解JVM虚拟机/2.Java内存区域/Pasted image 20220507134623.png",
     "Spring Family/Spring",
     "算法/区间",
