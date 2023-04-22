@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "129522944aba31e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6.828/Lab02 system call.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -74,8 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "2574059c4c821c0a",
@@ -91,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6.828/Lec03 os organization.md",
+                "file": "6.828/Lab02 system call.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +119,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6.828/Lec03 os organization.md"
+                "file": "6.828/Lab02 system call.md"
               }
             }
           }
@@ -130,10 +141,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7823dce3ffd68f40",
+  "active": "129522944aba31e5",
   "lastOpenFiles": [
-    "6.828/Lab01 utilities.md",
     "6.828/Lec03 os organization.md",
+    "6.828/Lab02 system call.md",
+    "6.828/Lab01 utilities.md",
     "算法/排序/快排.md",
     "算法/排序/归并排序.md",
     "6.828/Lab01 utilities/pipe.drawio",
@@ -163,7 +175,6 @@
     "Java/并发/线程池/ThreadPoolExecutor.md",
     "Java/并发/线程池/FutureTask.md",
     "Java/并发/锁/ReentrantLock.md",
-    "Java/并发/锁/LockSupport.md",
     "深入理解JVM虚拟机/2.Java内存区域/Pasted image 20220507134623.png",
     "Spring Family/Spring",
     "算法/区间",
