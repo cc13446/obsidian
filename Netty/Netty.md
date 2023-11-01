@@ -1,6 +1,6 @@
 转载自[多图详解-Netty](https://anye3210.github.io/2021/08/22/%E5%A4%9A%E5%9B%BE%E8%AF%A6%E8%A7%A3-Netty/)
 
-# Netty 线程模型
+## Netty 线程模型
 
 Netty 线程模型是基于主从 Reactor 多线程模型优化而来的，整体架构如下图所示
 
