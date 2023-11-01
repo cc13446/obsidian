@@ -11,8 +11,12 @@
             "id": "d1229659092c6522",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "RabbitMQ/基本工作原理.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -81,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Netty/Netty.md",
+                "file": "RabbitMQ/基本工作原理.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,12 +102,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Netty/Netty.md"
+                "file": "RabbitMQ/基本工作原理.md"
               }
             }
           },
           {
-            "id": "36d5dbf7d398152a",
+            "id": "4e955fbe16227505",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -129,32 +133,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7ec51ee3b77eb1c9",
+  "active": "fc99adc62504a263",
   "lastOpenFiles": [
-    "从零实现Netty",
-    "Netty/Netty/Pasted image 20220505131143.png",
-    "算法/数组/滑动窗口.md",
-    "6.828/Lec04 page tables.md",
-    "6.828/Lab03 page table.md",
-    "面试题/Spring.md",
-    "面试题/Netty.md",
-    "算法/区间/合并区间.md",
-    "算法/区间/差分数组.md",
-    "算法/数组/快慢指针.md",
-    "算法/数组/二分查找.md",
+    "Netty/内存管理.md",
+    "RabbitMQ/基本工作原理.md",
+    "Netty/内存管理",
+    "Mysql技术内幕/5.索引.md",
+    "Mysql技术内幕/3.文件.md",
+    "Linux/NIO.md",
+    "Linux/零拷贝技术.md",
+    "Kubernates权威指南/7. 网络原理.md",
+    "Java/集合类/WeakHashMap.md",
+    "Java/集合类/PriorityDeque.md",
+    "Java/集合类/LinkedList.md",
+    "Java/集合类/HashMap & HashSet.md",
+    "Java/集合类/ArrayList.md",
+    "Java/集合类/ArrayDeque.md",
+    "Java/并发/线程池/Fork&Join.md",
+    "Java/并发/锁/ReentrantLock.md",
+    "Java/并发/锁/LockSupport.md",
     "Java/并发/锁/AQS.md",
-    "Java/并发/原子类/CAS & Unsafe.md",
-    "Java/并发/工具类/CountDownLatch.md",
-    "Java/并发/工具类/CyclicBarrier.md",
-    "深入理解JVM虚拟机/13.线程安全锁优化.md",
-    "深入理解JVM虚拟机/3.垃圾收集器.md",
-    "深入理解JVM虚拟机/6.类文件结构.md",
-    "深入理解JVM虚拟机/7.类加载机制.md",
-    "深入理解JVM虚拟机/11.后端编译与优化.md",
-    "深入理解JVM虚拟机/10.前端编译与优化.md",
-    "深入理解JVM虚拟机/12.内存模型和线程.md",
-    "深入理解JVM虚拟机/8.字节码执行引擎.md",
-    "深入理解JVM虚拟机/2.Java内存区域.md",
+    "Java/并发/集合/CopyOnWriteArrayList.md",
+    "Java/并发/集合/ConcurrentLinkedQueue.md",
+    "Java/并发/集合/ConcurrentHashMap.md",
+    "Java/并发/集合/BlockQueue.md",
+    "Java/并发/关键字/Volatile.md",
+    "Java/并发/关键字/Synchronized.md",
+    "Java/并发/工具类/ThreadLocal.md",
+    "Java/并发/工具类/Semaphore.md",
+    "Java/并发/工具类/Phaser.md",
     "面试题/Netty/Pasted image 20230723234212.png",
     "面试题/Netty/Pasted image 20230723234008.png",
     "面试题/Netty/Pasted image 20230723233854.png",
@@ -163,19 +170,16 @@
     "Pasted image 20230723233243.png",
     "面试题/Netty/Pasted image 20230723225803.png",
     "面试题/Netty",
-    "Linux/NIO.md",
     "Linux/NIO/346e30f4-9119-11eb-bb4a-4a238cf0c417.mp4",
-    "Java/并发/集合/ConcurrentHashMap.md",
-    "Netty/Netty.md",
     "面试题",
     "6.828/Lec04 page tables/Pasted image 20230423160948.png",
     "6.828/Lec04 page tables",
     "6.828/Lec04 page tables/Pasted image 20230423151906.png",
     "6.828/Lab01 utilities/pipe.drawio",
     "6.828/Lab_01_utilities/pipe",
+    "6.828/Lab01 utilities/Pasted image 20230416133731.png",
     "6.828/Lab01 utilities",
     "6.828",
-    "Spring Family/Spring",
-    "算法/区间"
+    "Spring Family/Spring"
   ]
 }
